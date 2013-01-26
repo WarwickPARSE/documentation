@@ -1,1 +1,1 @@
-git push https://github.com/WarwickPARSE/documentation.git *.tex
+git push https://github.com/WarwickPARSE/documentation.git master
