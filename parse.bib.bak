@@ -1,0 +1,23 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@TECHREPORT{Barequet2001,
+  author = {Gill Barequet and Sariel Har-Peleld},
+  title = {{E}fficiently {A}pproximating the {M}inimum-{V}olume {B}ounding {B}ox
+	of a {P}oint {S}et in {T}hree {D}imensions},
+  institution = {University of Illinois},
+  year = {2001},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.05}
+}
+
+@BOOK{,
+  title = {{F}orest {D}ynamics, {G}rowth and {Y}ield: {F}rom {M}easurement to
+	{M}odel},
+  publisher = {Springer},
+  year = {2009},
+  author = {Hans Pretzsch},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.05}
+}
+
