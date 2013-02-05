@@ -19,6 +19,7 @@
   author = {Hans Pretzsch},
   owner = {Greg Corbett},
   timestamp = {2013.02.05}
+}
 
 @INPROCEEDINGS{Makadia06fullyautomatic,
   author = {Ameesh Makadia and Alexander Patterson and IV and Kostas Daniilidis},
