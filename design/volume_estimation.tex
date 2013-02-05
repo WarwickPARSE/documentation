@@ -29,10 +29,22 @@ This gives the volume of the minimum bounding box in point cloud Space, rather t
 This algorithm runs in $O(1)$ in the number of points within the point cloud as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
 
 \subsection{A Refined Approach}
-The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a persons volume. This overestimation is due to the fact people are not rectangular. The refined approach is based on the technique of 
+The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a persons volume. This overestimation is due to the fact people are not rectangular. The refined approach is based on the technique of \textit{volume rendering}. Volume rendering use multiple two dimensional slices to build up a three dimensional image. In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud. These areas may need to by multiplied by a constant in order for an accurate volume to be returned.\\
+
+The area of the two dimensional slices is calculated using the Shoelace formula \cite{Pretzsch2009}. The Shoelace formula states that given a Polygon $P$ made up of points $\{(x_1,y_1),(x_2,y_2)...(x_n,y_n)\}$, the area can be calculated as in Figure \ref{fig:the shoelace formula}.
+
+\begin{figure}[h]
+\begin{center}
+$Area = \left|\frac{(x_1y_2 - x_2y_1) + (x_2y_3 - x_3y_2) + ... + (x_ny_1 - x_1y_n)}{2}\right|$
+\end{center}
+\caption{The Shoelace Formula \cite{Pretzsch2009}}
+\label{fig:the shoelace formula}
+\end{figure}
+
+
 \subsubsection{Algorithm Running Time}
 The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. $z$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
 
 The todo{check method name} \textit{getAllPointsAt} method runs in \todo{check} $O(f)$.\\
 
-The \textit{rotSort} method is broken down into several parts. The first part is to determine the approximate centre of the point set. This calculation involves iterating through the list of points in the given plane, which is bounded by $O(p)$. The points then need to be translated so that the center is aligned with the origin, again requiring $O(p)$ time. The sorting of the points takes $O(p * log(p))$ in the average case and $O(p^2)$. The points are then translated back to there original position, again requiring $O(p)$ time. Once the sorting has been completed, the volume is calculated using the polygon area algorithm described above, requiring $O(p)$. Hence the contents of the for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}
+The \textit{rotSort} method is broken down into several parts. The first part is to determine the approximate centre of the point set. This calculation involves iterating through the list of points in the given plane, which is bounded by $O(p)$. The points then need to be translated so that the center is aligned with the origin, again requiring $O(p)$ time. The sorting of the points takes $O(p * log(p))$ in the average case and $O(p^2)$. The points are then translated back to there original position, again requiring $O(p)$ time. Once the sorting has been completed, the volume is calculated using the Shoelace formula described above, requiring $O(p)$. Hence the contents of the for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}
