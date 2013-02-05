@@ -1,0 +1,29 @@
+\section{Volume Estimation}
+\label{volume estimation}
+This section will focus on the algorithm design for the Volume Estimation module.
+
+\subsection{An Initial Upper Bound Approximation}
+\label{an initial upper bound approximation}
+It was decided as a 1st approximation to calculating the \textit{minimum bounding box} of a person, and use this box to determine volume. A minimum bounding box is defined as follows in \ref{fig:bounding_box_definition}.\\
+
+\begin{figure}[h]
+\textit{Definition: For a point set in N dimensions, it refers to the box with the smallest measure (area, volume, or hypervolume in higher dimensions) within which all the points lie.}
+\caption {Minimum Bounding Box Definition \cite{Barequet2001}}
+\label{fig:bounding_box_definition}
+\end{figure}
+
+For the purposes of PARSE, this box is three dimensional.\\
+
+The PointCloud class design described in \todo{cite section} was amended to keep track of the minimum and maximum x, y and z co-ordinates of all the points stored. From this the volume of the minimum bounding box can be calculated as in Figure  \ref{fig:calculating_the_volume_of_the_minimum_bounding_box}.\\
+
+\begin{figure}[h]
+\begin{center}
+$Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
+\end{center}
+\caption{Calculating the Volume of the Minimum Bounding Box}
+\label{fig:calculating_the_volume_of_the_minimum_bounding_box}
+\end{figure}
+
+This gives the volume of the minimum bounding box in point cloud Space, rather than in three dimensional reality. A multiplier must be applied to the volume calculated by Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} to facilitate a transform between the two. The precise value of this multiplicative can only be determined through testing, see section \todo{cite}.
+
+\subsection{A Refined Approach}
