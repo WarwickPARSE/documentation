@@ -1,3 +1,4 @@
+git add *.png
 git add *.tex
 git add *.sh
 git add *.bat
