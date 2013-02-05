@@ -1,0 +1,13 @@
+% This file was created with JabRef 2.8.1.
+% Encoding: Cp1252
+
+@INPROCEEDINGS{Makadia06fullyautomatic,
+  author = {Ameesh Makadia and Alexander Patterson and IV and Kostas Daniilidis},
+  title = {Fully automatic registration of 3d point clouds},
+  booktitle = {IN CVPR ’06: PROCEEDINGS OF THE 2006 IEEE COMPUTER SOCIETY CONFERENCE
+	ON COMPUTER VISION AND PATTERN RECOGNITION},
+  year = {2006},
+  pages = {1297-1304},
+  owner = {Robin}
+}
+
