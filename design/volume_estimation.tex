@@ -25,5 +25,14 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 \end{figure}
 
 This gives the volume of the minimum bounding box in point cloud Space, rather than in three dimensional reality. A multiplier must be applied to the volume calculated by Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} to facilitate a transform between the two. The precise value of this multiplicative can only be determined through testing, see section \todo{cite}.
+\subsubsection{Algorithm Running Time}
+This algorithm runs in $O(1)$ in the number of points within the point cloud as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
 
 \subsection{A Refined Approach}
+The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a persons volume. This overestimation is due to the fact people are not rectangular. The refined approach is based on the technique of 
+\subsubsection{Algorithm Running Time}
+The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. $z$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
+
+The todo{check method name} \textit{getAllPointsAt} method runs in \todo{check} $O(f)$.\\
+
+The \textit{rotSort} method is broken down into several parts. The first part is to determine the approximate centre of the point set. This calculation involves iterating through the list of points in the given plane, which is bounded by $O(p)$. The points then need to be translated so that the center is aligned with the origin, again requiring $O(p)$ time. The sorting of the points takes $O(p * log(p))$ in the average case and $O(p^2)$. The points are then translated back to there original position, again requiring $O(p)$ time. Once the sorting has been completed, the volume is calculated using the polygon area algorithm described above, requiring $O(p)$. Hence the contents of the for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}
