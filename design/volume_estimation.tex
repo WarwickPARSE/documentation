@@ -1,5 +1,5 @@
 \section{Volume Estimation}
-\label{volume estimation}
+\label{design:volume estimation}
 This section will focus on the algorithm design for the Volume Estimation module.
 
 \subsection{An Initial Upper Bound Approximation}
@@ -26,7 +26,9 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 
 This gives the volume of the minimum bounding box in point cloud Space, rather than in three dimensional reality. A multiplier must be applied to the volume calculated by Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} to facilitate a transform between the two. The precise value of this multiplicative can only be determined through testing, see section \todo{cite}.
 \subsubsection{Algorithm Running Time}
-This algorithm runs in $O(1)$ in the number of points within the point cloud as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
+Any algorithm for calculating volume will dealing with large data sets where the number of points $p$ in the point cloud is in the order of $10^6$. As such, the algorithms computation complexity must be taken into account.\\
+
+This algorithm runs in $O(1)$ in terms of $p$ as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
 
 \subsection{A Refined Approach}
 The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a person's volume. This overestimation is due to the fact people are not rectangular. The refined approach is based on the technique of \textit{volume rendering}. Volume rendering uses multiple two dimensional slices to build up a three dimensional image. In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud. These areas may need to by multiplied by a constant in order for an accurate volume to be returned. This multiplicative can only be determined through testing, see Section \todo{cite}.\\
@@ -51,4 +53,6 @@ The \textit{rotSort} method is broken down into several parts. The first part is
 
 Hence the contents of the volume rendering for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}\\
 
-For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur and in the case of PARSE, $p$ is quite large being in the order of $10^6$, Such a large $p$ means the worst case is extremely unlikely to occur.
+These bounds are in no way a proven \textit{tight} upperbound for the algorithm, as there have been many simplifying assumptions. Such as $O(z) \in O(p)$, whereas in reality, $O(z)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
+
+For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur in general use. In the case of PARSE, $p$ the order of $10^6$, such a large $p$ means the worst case is extremely unlikely to occur in practice. With the population of the UK being approximately $6x10^7$ \cite{UnitedKingdomofGreatBritain2011}, the entire population would have to be scanned 10,000 times before a worst case scenario is likely to have happened.
