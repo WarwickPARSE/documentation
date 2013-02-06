@@ -51,4 +51,4 @@ The \textit{rotSort} method is broken down into several parts. The first part is
 
 Hence the contents of the volume rendering for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}\\
 
-For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur and as in the case of PARSE, $p$ is quite large, it is extremely unlikely to occur.
+For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur and in the case of PARSE, $p$ is quite large being in the order of $10^6$, Such a large $p$ means the worst case is extremely unlikely to occur.
