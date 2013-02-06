@@ -3,7 +3,7 @@
 This section will focus on the algorithm design for the Volume Estimation module.
 
 \subsection{An Initial Upper Bound Approximation}
-\label{an initial upper bound approximation}
+\label{design: an initial upper bound approximation}
 It was decided as a 1st approximation to calculating the \textit{minimum bounding box} of a person, and use this box to determine volume. A minimum bounding box is defined as follows in \ref{fig:bounding_box_definition}.\\
 
 \begin{figure}[h]
@@ -31,6 +31,7 @@ Any algorithm for calculating volume will dealing with large data sets where the
 This algorithm runs in $O(1)$ in terms of $p$ as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
 
 \subsection{A Refined Approach}
+\label{design: a refined approach}
 The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a person's volume. This overestimation is due to the fact people are not rectangular. The refined approach is based on the technique of \textit{volume rendering}. Volume rendering uses multiple two dimensional slices to build up a three dimensional image. In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud. These areas may need to by multiplied by a constant in order for an accurate volume to be returned. This multiplicative can only be determined through testing, see Section \todo{cite}.\\
 
 The area of the two dimensional slices is calculated using the Shoelace formula \cite{Pretzsch2009}. The Shoelace formula states that given a Polygon $P$ made up of points $\{(x_1,y_1),(x_2,y_2)...(x_n,y_n)\}$, the area can be calculated as in Figure \ref{fig:the shoelace formula}.
