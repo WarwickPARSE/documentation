@@ -53,6 +53,6 @@ The \textit{rotSort} method is broken down into several parts. The first part is
 
 Hence the contents of the volume rendering for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}\\
 
-These bounds are in no way a proven \textit{tight} upperbound for the algorithm, as there have been many simplifying assumptions. Such as $O(z) \in O(p)$, whereas in reality, $O(z)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
+These bounds are in no way a proven \textit{tight} upperbound for the algorithm, as there have been many simplifying assumptions. Such as $O(z)$ growing as fast as $O(p)$, whereas in reality, $O(z)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
 
 For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur in general use. In the case of PARSE, $p$ the order of $10^6$, such a large $p$ means the worst case is extremely unlikely to occur in practice. With the population of the UK being approximately $6 * 10^7$ \cite{UnitedKingdomofGreatBritain2011}, the entire population would have to be scanned 10,000 times before a worst case scenario is likely to have happened.
