@@ -3,7 +3,7 @@
 The development of Volume Estimation was split up into two phase of differing accuracy.
 \subsection{Minimum Bounding Box}
 \label{testing: minimum bounding box}
-The bounding box approach, described in \ref{design: an initial upper bound approximation}, was useful because it allowed a transform between point cloud space (PCS) and real world space (RWS). This transform was necessary because the Kinect stores distances in terms of pixels rather than real world measurements such as meters. It is these real world measurements that the calculated volume should be outputted in. The transform is multiplicative and as such is of the from shown in Figure \ref{testing: transform between pcs and rws}
+The bounding box approach, described in \ref{design: an initial upper bound approximation}, was useful because it allowed the calculation of a transform between point cloud space (PCS) and real world space (RWS) without the added complexity of the volume rendering technique. This transform was necessary because the Kinect stores distances in terms of pixels rather than real world measurements such as meters and it is these real world measurements that the calculated volume should be outputted in. The transform is multiplicative and as such is of the from shown in Figure \ref{testing: transform between pcs and rws}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -13,7 +13,7 @@ $Volume_{PCS} * Transform Constant = Volume_{RWS}$
 \label{testing: transform between pcs and rws}
 \end{figure}
 
-In order to facilitate the calculation of the transform constant, many people were scanned and their minimum bounding box calculated two ways. Firstly the box was calculated using the PARSE tool kit to give the box's volume in PCS. Secondly, the volume of the box was calculate in RWS by measuring the height, width and breadth of the person. These figures were then divided to determine the transform constant as in Figure.
+In order to facilitate the calculation of the transform constant, many people were scanned and their minimum bounding box calculated two ways. Firstly the box was calculated using the PARSE tool kit to give the box's volume in PCS. Secondly, the volume of the box was calculate in RWS by measuring the height, width and breadth of the person. These figures were then divided to determine the transform constant as in Figure \ref{testing: table of data used to calculate the transform constant}.
 
 \begin{figure}[h]
 \begin{center}
@@ -22,20 +22,20 @@ $\frac{Volume_{RWS}}{Volume_{PCS}} = Transform Constant$
 \caption{Calculating the Transform Constant}
 \label{testing: calculating the transform constant}
 \end{figure}
-
 \begin{figure}[h]
 \begin{center}
   \begin{tabular}{| l | r | r | r |}
     \hline
-    Person & $Volume_{RWS}$ $m^3$ & $Volume_{PCS}$ $units^3$ & Transform Constant \\ \hline
-    Greg Corbett & 0.23829 & 4.70440 & 19.74234 \\ \hline
-    Bernard Sexton & 0.16200 & 4.11551 & 25.40442 \\
-    \hline
+    Person & $Volume_{RWS}$ ($m^3$) & $Volume_{PCS}$ ($units^3$) & Transform Constant \\ \hline
+    Greg Corbett 	& 0.23829 & 4.70440 & 0.05065\\ \hline
+    Bernard Sexton 	& 0.16200 & 4.11551 & 0.03936\\ \hline
   \end{tabular}
 \end{center}
 \caption{Table of Data Used to Calculate the Transform Constant}
 \label{testing: table of data used to calculate the transform constant}
 \end{figure}
+
+This approach is not without a drawback, the real world bounding box must be calculated by hand, using a tape measure. Such a process is inherently error prone, as highlighted in Section \ref{spec:motivation}. However it is hoped that, by taking as large a sample as possible and averaging the transform constants, such errors can be eliminated.\\
 
 \subsection{Volume Rendering}
 \label{testing: volume rendering}
