@@ -3,7 +3,7 @@
 The development of Volume Estimation was split up into two phase of differing accuracy.
 \subsection{Minimum Bounding Box}
 \label{testing: minimum bounding box}
-The bounding box approach, described in \ref{design: an initial upper bound approximation}, was useful because it allowed the calculation of a transform between point cloud space (PCS) and real world space (RWS) without the added complexity of the volume rendering technique. This transform was necessary because the Kinect stores distances in terms of pixels rather than real world measurements such as meters and it is these real world measurements that the calculated volume should be outputted in. The transform is multiplicative and as such is of the from shown in Figure \ref{testing: transform between pcs and rws}.\\
+The bounding box approach, described in \ref{design: an initial upper bound approximation}, was useful because it allowed the calculation of a transform between point cloud space (PCS) and real world space (RWS) without the added complexity of the volume rendering technique. This transform was necessary because the Kinect stores distances in terms of pixels rather than real world measurements such as meters and it is these real world measurements that the calculated volume should be outputted in. The transform is multiplicative and as such is of the form shown in Figure \ref{testing: transform between pcs and rws}.\\
 
 \begin{figure}[h]
 \begin{center}
