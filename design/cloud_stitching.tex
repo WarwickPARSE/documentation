@@ -1,0 +1,5 @@
+\section{Point Cloud Stitching}
+As only one scanner is to be used it is necessary to produce multiple scans so that the patient's whole body is scanned. Each of these scans must then be stitched together to form one big model which can then be manipulated as necessary. 
+
+\subsection{Surface Normal Calculation}
+The majority of the algorithms pertaining to point cloud stitching require the surface normal field to be calculated. This would present a challenge if we were to estimate the normal to each point in each scan as it would simply require too many calculations to be made. As a result it was decided that some sampling method should be used. In this case a voxel grid filter was implemented to create a sparse representation of the object that had just been scanned.  
