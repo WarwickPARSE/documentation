@@ -4,7 +4,7 @@ This section details the creation of a method to isolate a person from the backg
 An advantage of using a Kinect over another camera is that the Kinect is able to isolate a skeleton associated with a person.
 This skeleton meant that the group did not have to make use of computationally heavy computer vision algorithms to isolate a person \todo{example}.\\
 
-Instead, the method developed used the skeleton to determine the approximate depth of the person (using the HipCenter joint depth). 
+Instead, the method developed used the skeleton to determine the approximate depth of the person. 
 Any point whose depth value is outside a delta of the HipCenter's depth is discarded.\\ 
 
 Cutting off base depth alone is not enough, as this method leaves a \textit{ring} of equal distant points in-line with the person. 
