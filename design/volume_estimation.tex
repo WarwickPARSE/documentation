@@ -26,11 +26,11 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 \label{fig:calculating_the_volume_of_the_minimum_bounding_box}
 \end{figure}
 
-This gives the volume of the minimum bounding box in point cloud Space, rather than in three dimensional reality.
+The formula in Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} gives the volume of the minimum bounding box in point cloud space, rather than in three dimensional reality.
 A multiplier must be applied to the volume calculated by Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} to facilitate a transform between the two. 
 The precise value of this multiplicative can only be determined through testing, see section \todo{cite}.\\
 \subsubsection{Algorithm Running Time}
-Any algorithm for calculating volume will dealing with large data sets where the number of points $p$ in the point cloud is in the order of $10^6$.
+Any algorithm for calculating the volume of a point cloud will be operating on large data sets, where the number of points $p$ in the point cloud is in the order of $10^6$.
 As such, the algorithms computation complexity must be taken into account.\\
 
 This algorithm runs in $O(1)$ in terms of $p$ as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
@@ -41,12 +41,10 @@ The method described above in Section \ref{an initial upper bound approximation}
 This overestimation is due to the fact people are not rectangular.
 The refined approach is based on the technique of \textit{volume rendering}.
 Volume rendering uses multiple two dimensional slices to build up a three dimensional image. 
-In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud.
-These areas may need to by multiplied by a constant in order for an accurate volume to be returned. 
-This multiplicative can only be determined through testing, see Section \todo{cite}.\\
+In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud.\\
 
 The area of the two dimensional slices is calculated using the Shoelace formula \cite{Pretzsch2009}. 
-The Shoelace formula states that given a Polygon $P$ made up of points $\{(x_1,y_1),(x_2,y_2)...(x_n,y_n)\}$, the area can be calculated as in Figure \ref{fig:the shoelace formula}.
+The Shoelace formula states that given a Polygon $P$ made up of points $\{(x_1,y_1),(x_2,y_2)...(x_n,y_n)\}$, the area can be calculated as in Figure \ref{fig:the shoelace formula}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -56,6 +54,8 @@ $Area = \left|\frac{(x_1y_2 - x_2y_1) + (x_2y_3 - x_3y_2) + ... + (x_ny_1 - x_1y
 \label{fig:the shoelace formula}
 \end{figure}
 
+As with the bounding box method, the volume calculated by the volume rendering method may need to by multiplied by a constant in order for an accurate volume to be returned. 
+This multiplicative can only be determined through testing, see Section \todo{cite}.\\
 
 \subsubsection{Algorithm Running Time}
 The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. 
