@@ -4,7 +4,8 @@ This section will focus on the algorithm design for the Volume Estimation module
 
 \subsection{An Initial Upper Bound Approximation}
 \label{design: an initial upper bound approximation}
-It was decided as a 1st approximation to calculating the \textit{minimum bounding box} of a person, and use this box to determine volume. A minimum bounding box is defined as follows in \ref{fig:bounding_box_definition}.\\
+It was decided as a 1st approximation to calculating the \textit{minimum bounding box} of a person, and use this box to determine volume.
+ A minimum bounding box is defined as follows in \ref{fig:bounding_box_definition}.\\
 
 \begin{figure}[h]
 \textit{Definition: For a point set in N dimensions, it refers to the box with the smallest measure (area, volume, or hypervolume in higher dimensions) within which all the points lie.}
@@ -14,7 +15,8 @@ It was decided as a 1st approximation to calculating the \textit{minimum boundin
 
 For the purposes of PARSE, this box is three dimensional.\\
 
-The PointCloud class design described in \todo{cite section} was amended to keep track of the minimum and maximum x, y and z co-ordinates of all the points stored. From this the volume of the minimum bounding box can be calculated as in Figure  \ref{fig:calculating_the_volume_of_the_minimum_bounding_box}.\\
+The PointCloud class design described in \todo{cite section} was amended to keep track of the minimum and maximum x, y and z co-ordinates of all the points stored. 
+From these points, the volume of the minimum bounding box can be calculated as in Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -24,17 +26,27 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 \label{fig:calculating_the_volume_of_the_minimum_bounding_box}
 \end{figure}
 
-This gives the volume of the minimum bounding box in point cloud Space, rather than in three dimensional reality. A multiplier must be applied to the volume calculated by Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} to facilitate a transform between the two. The precise value of this multiplicative can only be determined through testing, see section \todo{cite}.
+This gives the volume of the minimum bounding box in point cloud Space, rather than in three dimensional reality.
+A multiplier must be applied to the volume calculated by Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box} to facilitate a transform between the two. 
+The precise value of this multiplicative can only be determined through testing, see section \todo{cite}.\\
 \subsubsection{Algorithm Running Time}
-Any algorithm for calculating volume will dealing with large data sets where the number of points $p$ in the point cloud is in the order of $10^6$. As such, the algorithms computation complexity must be taken into account.\\
+Any algorithm for calculating volume will dealing with large data sets where the number of points $p$ in the point cloud is in the order of $10^6$.
+As such, the algorithms computation complexity must be taken into account.\\
 
 This algorithm runs in $O(1)$ in terms of $p$ as $xmax$ et al are stored within the point cloud object upon creation and can be retrieved in constant time. 
 
 \subsection{A Refined Approach}
 \label{design: a refined approach}
-The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a person's volume. This overestimation is due to the fact people are not rectangular. The refined approach is based on the technique of \textit{volume rendering}. Volume rendering uses multiple two dimensional slices to build up a three dimensional image. In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud. These areas may need to by multiplied by a constant in order for an accurate volume to be returned. This multiplicative can only be determined through testing, see Section \todo{cite}.\\
+The method described above in Section \ref{an initial upper bound approximation} will result in an overestimation of a person's volume.
+This overestimation is due to the fact people are not rectangular.
+The refined approach is based on the technique of \textit{volume rendering}.
+Volume rendering uses multiple two dimensional slices to build up a three dimensional image. 
+In the case of PARSE, the area of these two dimensional slices is calculated and summed to determine the volume of the three dimensional point cloud.
+These areas may need to by multiplied by a constant in order for an accurate volume to be returned. 
+This multiplicative can only be determined through testing, see Section \todo{cite}.\\
 
-The area of the two dimensional slices is calculated using the Shoelace formula \cite{Pretzsch2009}. The Shoelace formula states that given a Polygon $P$ made up of points $\{(x_1,y_1),(x_2,y_2)...(x_n,y_n)\}$, the area can be calculated as in Figure \ref{fig:the shoelace formula}.
+The area of the two dimensional slices is calculated using the Shoelace formula \cite{Pretzsch2009}. 
+The Shoelace formula states that given a Polygon $P$ made up of points $\{(x_1,y_1),(x_2,y_2)...(x_n,y_n)\}$, the area can be calculated as in Figure \ref{fig:the shoelace formula}.
 
 \begin{figure}[h]
 \begin{center}
@@ -46,14 +58,26 @@ $Area = \left|\frac{(x_1y_2 - x_2y_1) + (x_2y_3 - x_3y_2) + ... + (x_ny_1 - x_1y
 
 
 \subsubsection{Algorithm Running Time}
-The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. $z$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
+The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. 
+$z$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
 
-The \textit{getAllPointsAt} and the \textit{rotSort} method occur within the volume rendering for loop. The \todo{check method name} \textit{getAllPointsAt} method runs in \todo{check} $O(f)$.\\
+The \textit{getAllPointsAt} and the \textit{rotSort} method occur within the volume rendering for loop. 
+The \todo{check method name} \textit{getAllPointsAt} method runs in \todo{check} $O(f)$.\\
 
-The \textit{rotSort} method is broken down into several parts. The first part is to determine the approximate centre of the point set. This calculation involves iterating through the list of points in the given plane, which is bounded by $O(p)$. The points then need to be translated so that the center is aligned with the origin, again requiring $O(p)$ time. The sorting of the points (using quicksort) takes $O(p * log(p))$ in the average case and $O(p^2)$ in the worst case. The points are then translated back to there original position, again requiring $O(p)$ time. Once the sorting has been completed, the volume is calculated using the Shoelace formula described above, requiring $O(p)$.\\
+The \textit{rotSort} method is broken down into several parts. 
+The first part is to determine the approximate centre of the point set. 
+This calculation involves iterating through the list of points in the given plane, which is bounded by $O(p)$. 
+The points then need to be translated so that the center is aligned with the origin, again requiring $O(p)$ time. 
+The sorting of the points (using quicksort) takes $O(p * log(p))$ in the average case and $O(p^2)$ in the worst case. 
+The points are then translated back to there original position, again requiring $O(p)$ time. 
+Once the sorting has been completed, the volume is calculated using the Shoelace formula described above, requiring $O(p)$.\\
 
-Hence the contents of the volume rendering for loop is bounded by $O(p * log(p))$ in the average case. Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}\\
+Hence the contents of the volume rendering for loop is bounded by $O(p * log(p))$ in the average case. 
+Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}\\
 
-These bounds are in no way a proven \textit{tight} upperbound for the algorithm, as there have been many simplifying assumptions. Such as $O(z)$ growing as fast as $O(p)$, whereas in reality, $O(z)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
+These bounds are in no way a proven \textit{tight} upperbound for the algorithm, as there have been many simplifying assumptions. 
+Such as $O(z)$ growing as fast as $O(p)$, whereas in reality, $O(z)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
 
-For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur in general use. In the case of PARSE, $p$ the order of $10^6$, such a large $p$ means the worst case is extremely unlikely to occur in practice. With the population of the UK being approximately $6 * 10^7$ \cite{UnitedKingdomofGreatBritain2011}, the entire population would have to be scanned 10,000 times before a worst case scenario is likely to have happened.
+For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. 
+The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur in general use. 
+In the case of PARSE, $p$ the order of $10^6$, such a large $p$ means the worst case is extremely unlikely to occur in practice. With the population of the UK being approximately $6 * 10^7$ \cite{UnitedKingdomofGreatBritain2011}, the entire population would have to be scanned 10,000 times before a worst case scenario is likely to have happened.
