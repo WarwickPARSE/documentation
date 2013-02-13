@@ -61,7 +61,7 @@ This multiplicative can only be determined through testing, see Section \todo{ci
 The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. 
 $z$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
 
-The \textit{getAllPointsAt} and the \textit{rotSort} method occur within the volume rendering for loop. 
+The \textit{getAllPointsAt} and the \textit{rotSort} method, located within the static PointSorter class, occur within the volume rendering for loop. 
 The \todo{check method name} \textit{getAllPointsAt} method runs in \todo{check} $O(f)$.\\
 
 The \textit{rotSort} method is broken down into several parts. 
