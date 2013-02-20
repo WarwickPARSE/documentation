@@ -1,6 +1,37 @@
 \section{Person Isolation}
 \label{testing:person isolation}
-Figure \ref{fig:depth based cut off} shows the depth based cut off, described in Section \ref{design:person isolation}. As predicted, this cut off is sufficient to eliminate a large proportion of non-person data but does not remove the ring of points at the same depth as the person.\\
+
+\subsection{Colour Based Isolation}
+\label{testing:colour based isolation}
+Figure X shows the colour based isolation, described in Section \ref{design:colour based isolation}.
+As suspected, this method performs well, removing all non person  details from the scene.\\
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./design/parse1} 
+\includegraphics[scale=0.4]{./design/parse2}
+\end{center}
+\caption{Colour Based Isolation, before (left) and after (right).}
+\label{fig:colour based cut off}
+\end{figure} 
+
+Again as expect however, colour based isolation is not immediately useful as depth data is need to create the point cloud. An attempt to overcome this was to try and map the colour pixels, which corresponded to people, to depth pixels.
+Unfortunately, as the depth sensor and colour camera are not situated in the same place on the Kinect, this mapping is non trivial and is currently an open problem in and of itself in the Kinect development community.
+Efforts were devoted by the group to fix this problem, however non of the solutions proposed lead to a sufficiently isolated person.
+In figure X, it can be seen that the method isolated pixels incorrectly. 
+Such a problem also negated the possibility of a textured point cloud being displayed by the toolkit, as described in Section \todo{ref}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./design/parse1} 
+\end{center}
+\caption{A Poorly Isolated Person}
+\label{fig:a poorly isolated person}
+\end{figure} 
+
+\subsection{Depth Based Isolation}
+\label{testing:depth based isolation}
+Figure \ref{fig:depth based cut off} shows the depth based isolation, described in Section \ref{design:depth based isolation}. As predicted, this cut off is sufficient to eliminate a large proportion of non-person data but does not remove the ring of points at the same depth as the person.\\
 
 \begin{figure}[h]
 \begin{center}
