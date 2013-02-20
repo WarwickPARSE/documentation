@@ -13,7 +13,7 @@ The Kinect can determine whether a colour pixel is associated with a detected sk
 
 \subsection{Depth Based Isolation}
 \label{design:depth based isolation}
-The sections method made use of the skeleton to determine the approximate depth of the person. 
+The sections method makes use of the skeleton to determine the approximate depth of the person. 
 Any point whose depth value is outside a delta of the skeleton's depth is discarded.
 Cutting off base depth alone is not enough, as this method leaves a \textit{ring} of equal distant points in-line with the person. 
 To eliminate this ring, the positions of left and right most point of the person (i.e. the HandLeft joint and the HandRight joint) are calculated and anything outside of this range is also discarded. \\
