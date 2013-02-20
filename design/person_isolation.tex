@@ -5,17 +5,20 @@ The first method uses the Kinect colour stream whereas the second uses the depth
 Both methods make use of the Kinect's ability to isolate a skeleton associated with a person.
 The use of this skeleton meant that the group did not have to make use of computationally heavy computer vision algorithms to isolate a person \todo{example}.\\
 
+Section \ref{testing:person isolation} details the effectiveness of the two approaches.
+
 \subsection{Colour Based Isolation}
-The Kinect can determine whether a colour pixel is associated with a detected skeleton. Hence if a pixel is not associated, the colour value for that pixel can be set to white.
-It is expected 
+\label{design:colour based isolation}
+The Kinect can determine whether a colour pixel is associated with a detected skeleton. Hence if a pixel is not associated, the colour value for that pixel can be set to white.\\
 
-\subsection{Depth Based Isolation
-
-
-Instead, the method developed used the skeleton to determine the approximate depth of the person. 
-Any point whose depth value is outside a delta of the skeleton's depth is discarded.\\ 
-
+\subsection{Depth Based Isolation}
+\label{design:depth based isolation}
+The sections method made use of the skeleton to determine the approximate depth of the person. 
+Any point whose depth value is outside a delta of the skeleton's depth is discarded.
 Cutting off base depth alone is not enough, as this method leaves a \textit{ring} of equal distant points in-line with the person. 
 To eliminate this ring, the positions of left and right most point of the person (i.e. the HandLeft joint and the HandRight joint) are calculated and anything outside of this range is also discarded. \\
 
-Section \ref{testing:person isolation} details the effectiveness of this approach.
+\subsection{One or the Other?}
+\label{design:one or the other?}
+At this stage, it was expected that colour based isolation (Section \ref{design:colour based isolation}) would preform well, but it was unknown if a point cloud could be constructed using this method. 
+Conversely it was suspected that depth based isolation (Section \ref{design:depth based isolation}) would be less effective at removing all the miscellaneous non-person data, but may be better suited to creating a point cloud than colour based isolation. This suspicion was because the colour data contains no depth.\\ 
