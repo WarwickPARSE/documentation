@@ -58,8 +58,8 @@ As with the bounding box method, the volume calculated by the volume rendering m
 This multiplicative can only be determined through testing, see Section \todo{cite}.\\
 
 \subsubsection{Algorithm Running Time}
-The Volume Rendering runs in $O(z)$ where $z$ is the number of points in the z axis. 
-$z$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
+The Volume Rendering runs in $O(y)$ where $y$ is the number of points in the z axis (the axis corresponding to height)\todo{is this still the case}. 
+$y$ is itself bounded by $O(p)$, where $p$ is the number of points in the point cloud. \\
 
 The \textit{getAllPointsAt} and the \textit{rotSort} method, located within the static PointSorter class, occur within the volume rendering for loop. 
 The \todo{check method name} \textit{getAllPointsAt} method runs in \todo{check} $O(f)$.\\
@@ -76,7 +76,7 @@ Hence the contents of the volume rendering for loop is bounded by $O(p * log(p))
 Meaning the entire algorithm requires $O(p^2 * log(p))$ in the average case and $O(p^3)$ in the worst case. \todo{or O(f) find f}\\
 
 These bounds are in no way a proven \textit{tight} upperbound for the algorithm, as there have been many simplifying assumptions. 
-Such as $O(z)$ growing as fast as $O(p)$, whereas in reality, $O(z)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
+Such as $O(z)$ growing as fast as $O(p)$, whereas in reality, $O(y)$ is will grow slower than $O(p)$, perhaps by an order of magnitude.\\
 
 For quicksort, the worst case occurs when the algorithm consistently picks the worst pivot each iteration. 
 The probability of this happening is $O(\frac{1}{p^2})$, as such it is unlikely to occur in general use. 
