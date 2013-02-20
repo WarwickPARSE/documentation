@@ -14,10 +14,10 @@ As suspected, this method performs well, removing all non person  details from t
 \label{fig:colour based cut off}
 \end{figure} 
 
-Again as expect however, colour based isolation is not immediately useful as depth data is need to create the point cloud. An attempt to overcome this was to try and map the colour pixels, which corresponded to people, to depth pixels.
+However, colour based isolation is not immediately useful as depth data is need to create the point cloud. An attempt to overcome this was to try and map the colour pixels, which corresponded to people, to depth pixels.
 Unfortunately, as the depth sensor and colour camera are not situated in the same place on the Kinect, this mapping is non trivial and is currently an open problem in and of itself in the Kinect development community.
 Efforts were devoted by the group to fix this problem, however non of the solutions proposed lead to a sufficiently isolated person.
-In figure \ref{fig:a poorly isolated person}, it can be seen that the method isolated pixels incorrectly. 
+In Figure \ref{fig:a poorly isolated person}, it can be seen that the method isolated pixels incorrectly. 
 The lack of effective mapping between colour and depth pixels also negated the possibility of a textured point cloud being displayed by the toolkit, as described in Section \todo{ref}.
 
 \begin{figure}[h]
