@@ -39,7 +39,7 @@ This approach is not without a drawback, the real world bounding box must be cal
 
 \subsection{Volume Rendering}
 \label{testing: volume rendering}
-This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}. The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z to a .csv file and plotting them using Excel. Using Excel meant that the retrieval method could be tested outside the visualization, which was at this stage untested. For testing purposes we took a slice from the approximate middle, height wise, of the Wilkinson data set \todo{(Appendix X)}.\\
+This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}. The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z to a .csv file and plotting them using Excel. Using Excel meant that the retrieval method could be tested outside the visualization, which was at this stage untested. For testing purposes we took a slice from the approximate middle, height wise, of the Wilkinson data set \todo{(Appendix X)}, visualised in Figure \ref{fig:the wilkinson data set, visualised with an early stitching algorithm}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -49,12 +49,14 @@ This section details the testing of the volume rendering approach, discussed in 
 \label{fig:the wilkinson data set, visualised with an early stitching algorithm}
 \end{figure}
 
+Through Excel, the group achieved the following subset of the Wilkinson data set. 
+
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.4]{./testing/wilko2} 
 \end{center}
-\caption{Fat Man}
-\label{fig:fat man}
+\caption{The middle plane of the Wilkinson data set.}
+\label{fig:the middle plane of the Wilkinson data set.}
 \end{figure}
 
 \begin{figure}[h]
