@@ -42,7 +42,7 @@ However it is hoped that, by taking as large a sample as possible and averaging 
 \subsection{Volume Rendering}
 \label{testing: volume rendering}
 This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}. 
-The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z to a .csv file and plotting them using Excel. 
+The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z co-ordinates to a .csv file and plotting them using Excel. 
 Using Excel meant that the retrieval method could be tested outside the visualization, which was at this stage untested. 
 For testing purposes we took a slice from the approximate middle, height wise, of the Wilkinson data set \todo{(Appendix X)}, visualised in Figure \ref{fig:the wilkinson data set, visualised with an early stitching algorithm}.\\
 
@@ -54,20 +54,22 @@ For testing purposes we took a slice from the approximate middle, height wise, o
 \label{fig:the wilkinson data set, visualised with an early stitching algorithm}
 \end{figure}
 
-Through Excel, the group was able to retrieve the middle plane from the Wilkinson data set.\\ 
+Through Excel, the group was able to retrieve the middle plane from the Wilkinson data set. 
+Through the use of the Excel visualization, see Figure \ref{fig:the middle plane of the Wilkinson data set, visualized in excel.}, the correctness of the underline volume rendering technique was able to be confirmed.
+Also, the Excel visualisation was a gold standard that informed the verification of the PARSE toolkit visualization, see Figure \ref{fig:The middle plane of the wilkinson data set, visualized in the parse toolkit.}.\\ 
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.4]{./testing/wilko2} 
 \end{center}
-\caption{The middle plane of the Wilkinson data set.}
-\label{fig:the middle plane of the Wilkinson data set.}
+\caption{The middle plane of the Wilkinson data set, visualized in Excel.}
+\label{fig:the middle plane of the Wilkinson data set, visualized in excel.}
 \end{figure}
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.4]{./design/nathan} 
+\includegraphics[scale=0.4]{./testing/wilko3} 
 \end{center}
-\caption{We're meeting now?}
-\label{fig:we're meeting now?}
+\caption{The middle plane of the Wilkinson data set, visualized in the PARSE toolkit.}
+\label{fig:The middle plane of the wilkinson data set, visualized in the parse toolkit.}
 \end{figure}
