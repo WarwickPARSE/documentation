@@ -13,7 +13,7 @@ $Volume_{PCS} * Transform Constant = Volume_{RWS}$
 \label{testing: transform between pcs and rws}
 \end{figure}
 
-In order to facilitate the calculation of the transform constant, many people were scanned and their minimum bounding box calculated two ways. Firstly the box was calculated using the PARSE tool kit to give the box's volume in PCS. Secondly, the volume of the box was calculate in RWS by measuring the height, width and breadth of the person. These figures were then divided to determine the transform constant as in Figure \ref{testing: table of data used to calculate the transform constant}.
+In order to facilitate the calculation of the transform constant, many people were scanned and their minimum bounding box calculated two ways. Firstly the box was calculated using the PARSE tool kit to give the box's volume in PCS. Secondly, the volume of the box was calculate in RWS by measuring the height, width and breadth of the person. These figures were then divided to determine the transform constant as in Figure \ref{testing: table of data used to calculate the transform constant}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -39,4 +39,28 @@ This approach is not without a drawback, the real world bounding box must be cal
 
 \subsection{Volume Rendering}
 \label{testing: volume rendering}
-This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}
+This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}. The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z to a .csv file and plotting them using Excel. Using Excel meant that the retrieval method could be tested outside the visualization, which was at this stage untested. For testing purposes we took a slice from the approximate middle, height wise, of the Wilkinson data set \todo{(Appendix X)}.\\
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./testing/wilko1} 
+\end{center}
+\caption{The Wilkinson data set, visualised with an early stitching algorithm.}
+\label{fig:the wilkinson data set, visualised with an early stitching algorithm}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./testing/wilko2} 
+\end{center}
+\caption{Fat Man}
+\label{fig:fat man}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./design/nathan} 
+\end{center}
+\caption{We're meeting now?}
+\label{fig:we're meeting now?}
+\end{figure}
