@@ -35,11 +35,16 @@ $\frac{Volume_{RWS}}{Volume_{PCS}} = Transform Constant$
 \label{testing: table of data used to calculate the transform constant}
 \end{figure}
 
-This approach is not without a drawback, the real world bounding box must be calculated by hand, using a tape measure. Such a process is inherently error prone, as highlighted in Section \ref{spec:motivation}. However it is hoped that, by taking as large a sample as possible and averaging the transform constants, such errors can be eliminated or atleast minimized.\\
+This approach is not without a drawback, the real world bounding box must be calculated by hand, using a tape measure. 
+Such a process is inherently error prone, as highlighted in Section \ref{spec:motivation}. 
+However it is hoped that, by taking as large a sample as possible and averaging the transform constants, such errors can be eliminated or atleast minimized.\\
 
 \subsection{Volume Rendering}
 \label{testing: volume rendering}
-This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}. The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z to a .csv file and plotting them using Excel. Using Excel meant that the retrieval method could be tested outside the visualization, which was at this stage untested. For testing purposes we took a slice from the approximate middle, height wise, of the Wilkinson data set \todo{(Appendix X)}, visualised in Figure \ref{fig:the wilkinson data set, visualised with an early stitching algorithm}.\\
+This section details the testing of the volume rendering approach, discussed in Section \ref{design: a refined approach}. 
+The method to retrieve a plane of points, all at a similar height, from a point cloud was tested by outputting the retrieved points x and z to a .csv file and plotting them using Excel. 
+Using Excel meant that the retrieval method could be tested outside the visualization, which was at this stage untested. 
+For testing purposes we took a slice from the approximate middle, height wise, of the Wilkinson data set \todo{(Appendix X)}, visualised in Figure \ref{fig:the wilkinson data set, visualised with an early stitching algorithm}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -49,7 +54,7 @@ This section details the testing of the volume rendering approach, discussed in 
 \label{fig:the wilkinson data set, visualised with an early stitching algorithm}
 \end{figure}
 
-Through Excel, the group achieved the following subset of the Wilkinson data set. 
+Through Excel, the group was able to retrieve the middle plane from the Wilkinson data set.\\ 
 
 \begin{figure}[h]
 \begin{center}
