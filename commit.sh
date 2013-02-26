@@ -7,4 +7,5 @@ git add *.bak
 git add testing
 git add design
 git add spec
+git add pm
 git commit -m "$1"
