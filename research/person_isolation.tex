@@ -1,60 +1,60 @@
 \section{Background Subtraction and Person Isolation}
 \label{background subtraction and person isolation}
-In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \ref{Cheung2007}.\\
+In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \cite{Cheung2007}.\\
 
 \subsection{Isolating Objects}
 \label{isolating objects}
 
 \subsubsection{General Approaches, Properties and Steps}
-A common approach for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \ref{Cheung2007}.
+A common approach for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \cite{Cheung2007}.
 This general approach allows the isolation of non humanoid objects such as cars, but is still worthy of note because any person isolation algorithm must shared some similarities with generic object isolation algorithms.\\
 
-These similarities between the algorithms for object isolation and person isolation are that both must \ref{Cheung2007}:\begin{itemize}
+These similarities between the algorithms for object isolation and person isolation are that both must \cite{Cheung2007}:\begin{itemize}
   \item Be robust against changes in illumination
   \item Avoid detecting non-stationary background objects such as swinging leaves
   \item React quickly to changes
 \end{itemize}
 
 Approaches to object isolation vary from simple techniques such as frame differencing and adaptive median filtering, to more sophisticated probabilistic modelling techniques. 
-While complicated techniques often produce superior performance, experiments \ref{Cheung2007} show that simple techniques such as adaptive median filtering can produce good results with much lower computational complexity.\\
+While complicated techniques often produce superior performance, experiments \cite{Cheung2007} show that simple techniques such as adaptive median filtering can produce good results with much lower computational complexity.\\
 
 In general, the four major steps in a background subtraction algorithm are preprocessing, background modelling, foreground detection, and data validation.
-Preprocessing consists of a collection of simple image processing tasks that change the raw input video into a format that can be processed by subsequent steps and can involve noise reduction and frame size/rate reductions \ref{Cheung2007}\\.
+Preprocessing consists of a collection of simple image processing tasks that change the raw input video into a format that can be processed by subsequent steps and can involve noise reduction and frame size/rate reductions \cite{Cheung2007}\\.
 
 Background modelling uses the new video frame to calculate and update a background model.
 This background model provides a statistical description of the entire background scene and can be non-recursive or recursive. 
 A non-recursive technique uses a sliding-window approach for background estimation. 
 The technique stores a buffer of the previous $L$ video frames, and estimates the background image based on the temporal variation of each pixel within the buffer.
-Non-recursive techniques are highly adaptive as they do not depend on the history beyond those frames stored in the buffer \ref{Cheung2007}, which may make the ideal for the tool kit.
+Non-recursive techniques are highly adaptive as they do not depend on the history beyond those frames stored in the buffer \cite{Cheung2007}, which may make the ideal for the tool kit.
 On the other hand, the storage requirement can be significant if a large buffer
-is needed to cope with slow-moving objects \ref{Cheung2007}, although that should not be a problem for the tool kit. Recursive techniques do not use a buffer but maintain a single background model based on each input frame. As a result, input frames from distant past could have an effect on the current background model \ref{Cheung2007} and hence may not be suitable for the tool kit.\\
+is needed to cope with slow-moving objects \cite{Cheung2007}, although that should not be a problem for the tool kit. Recursive techniques do not use a buffer but maintain a single background model based on each input frame. As a result, input frames from distant past could have an effect on the current background model \cite{Cheung2007} and hence may not be suitable for the tool kit.\\
 
 Foreground detection then identifies pixels in the video frame that cannot be adequately explained by the background model and outputs them as a binary candidate foreground mask. 
-Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \ref{Cheung2007}.\\
+Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
 \subsubsection{Frame Differencing, Median, Kalman and Gaussian Filtering.}
-Cheung \ref{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
+Cheung \cite{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.4]{./research/schemes} 
 \end{center}
-\caption{Background modelling schemes tested and their parameters \ref{Cheung2007}.}
+\caption{Background modelling schemes tested and their parameters \cite{Cheung2007}.}
 \label{fig:background modelling schemes tested and their parameters}
 \end{figure}
 
-Cheung \ref{Cheung2007} selected four publicly-available urban traffic video sequences from the website maintained by KOGS/IAKS Universitaet Karlsruhey. A sample frame from each sequence is shown in Figure \ref{fig:sample frames from the four test sequences: Bright, Fog, Snow and Busy}.\\ 
+Cheung \cite{Cheung2007} selected four publicly-available urban traffic video sequences from the website maintained by KOGS/IAKS Universitaet Karlsruhey. A sample frame from each sequence is shown in Figure \ref{fig:sample frames from the four test sequences: Bright, Fog, Snow and Busy}.\\ 
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.4]{./research/samples} 
 \end{center}
-\caption{Sample frames from the four test sequences: Bright, Fog, Snow and Busy. \ref{Cheung2007}.}
+\caption{Sample frames from the four test sequences: Bright, Fog, Snow and Busy. \cite{Cheung2007}.}
 \label{fig:sample frames from the four test sequences: Bright, Fog, Snow and Busy}
 \end{figure}
 
-In Cheung's experiments \ref{Cheung2007} MoG achieved the best precision, MF was a very close second, followed by AMF and KF. FD was significantly worse than all the other schemes. Even though AMF performed worse than MoG and MF, it produced a good performance with an extremely simple implementation. The only drawback of AMF was that it adapts slowly toward a large change in background \ref{Cheung2007}. However this is not expected to be a problem for the tool kit as the should not be any large changes in the background of a doctor's office.\\
+In Cheung's experiments \cite{Cheung2007} MoG achieved the best precision, MF was a very close second, followed by AMF and KF. FD was significantly worse than all the other schemes. Even though AMF performed worse than MoG and MF, it produced a good performance with an extremely simple implementation. The only drawback of AMF was that it adapts slowly toward a large change in background \cite{Cheung2007}. However this is not expected to be a problem for the tool kit as the should not be any large changes in the background of a doctor's office.\\
 
-Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. as a result, it typically left a long trail after a moving object \ref{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
+Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. as a result, it typically left a long trail after a moving object \cite{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
 
 Such experiments suggest that, at this early stage, Adaptive Mean Filtering may be the way forward.\\
