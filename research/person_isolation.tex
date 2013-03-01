@@ -33,4 +33,28 @@ Foreground detection then identifies pixels in the video frame that cannot be ad
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \ref{Cheung2007}.\\
 
 \subsubsection{Frame Differencing, Median, Kalman and Gaussian Filtering.}
-Chenug \ref{Cheung2007}
+Cheung \ref{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./research/schemes} 
+\end{center}
+\caption{Background modelling schemes tested and their parameters \ref{Cheung2007}.}
+\label{fig:background modelling schemes tested and their parameters}
+\end{figure}
+
+Cheung \ref{Cheung2007} selected four publicly-available urban traffic video sequences from the website maintained by KOGS/IAKS Universitaet Karlsruhey. A sample frame from each sequence is shown in Figure \ref{fig:sample frames from the four test sequences: Bright, Fog, Snow and Busy}.\\ 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.4]{./research/samples} 
+\end{center}
+\caption{Sample frames from the four test sequences: Bright, Fog, Snow and Busy. \ref{Cheung2007}.}
+\label{fig:sample frames from the four test sequences: Bright, Fog, Snow and Busy}
+\end{figure}
+
+In Cheung's experiments \ref{Cheung2007} MoG achieved the best precision, MF was a very close second, followed by AMF and KF. FD was significantly worse than all the other schemes. Even though AMF performed worse than MoG and MF, it produced a good performance with an extremely simple implementation. The only drawback of AMF was that it adapts slowly toward a large change in background \ref{Cheung2007}. However this is not expected to be a problem for the tool kit as the should not be any large changes in the background of a doctor's office.\\
+
+Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. as a result, it typically left a long trail after a moving object \ref{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
+
+Such experiments suggest that, at this early stage, Adaptive Mean Filtering may be the way forward.\\
