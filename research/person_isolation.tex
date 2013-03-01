@@ -1,21 +1,12 @@
 \section{Background Subtraction and Person Isolation}
 \label{background subtraction and person isolation}
-In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. \\
-
-In general, the four major steps in a background subtraction algorithm are preprocessing, background modelling, foreground detection, and data validation.
-Preprocessing consists of a collection of simple image processing tasks that change the raw input video into a format that can be processed by subsequent steps. 
-Background modelling uses the new video frame to calculate and update a background
-model. This background model provides a statistical description of the entire background scene. 
-Foreground detection then identifies pixels in the video frame that cannot be adequately explained by the background model and outputs them as a binary candidate foreground mask. 
-Data validation examines the candidate mask, eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask.\\
-
-Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \ref{Cheung2007}.\\
+In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \ref{Cheung2007}.\\
 
 \subsection{Isolating Objects}
 \label{isolating objects}
 
-\subsubsection{General Properties}
-A common approach \ref{Cheung2007} for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \ref{Cheung2007}.
+\subsubsection{General Approaches, Properties and Steps}
+A common approach for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \ref{Cheung2007}.
 This general approach allows the isolation of non humanoid objects such as cars, but is still worthy of note because any person isolation algorithm must shared some similarities with generic object isolation algorithms.\\
 
 These similarities between the algorithms for object isolation and person isolation are that both must \ref{Cheung2007}:\begin{itemize}
@@ -24,6 +15,22 @@ These similarities between the algorithms for object isolation and person isolat
   \item React quickly to changes
 \end{itemize}
 
-Approaches to object isolation vary from simple techniques such as frame differencing and adaptive median filtering, to more sophisticated probabilistic modelling techniques \ref{Cheung2007}. 
+Approaches to object isolation vary from simple techniques such as frame differencing and adaptive median filtering, to more sophisticated probabilistic modelling techniques. 
 While complicated techniques often produce superior performance, experiments \ref{Cheung2007} show that simple techniques such as adaptive median filtering can produce good results with much lower computational complexity.\\
 
+In general, the four major steps in a background subtraction algorithm are preprocessing, background modelling, foreground detection, and data validation.
+Preprocessing consists of a collection of simple image processing tasks that change the raw input video into a format that can be processed by subsequent steps and can involve noise reduction and frame size/rate reductions \ref{Cheung2007}\\.
+
+Background modelling uses the new video frame to calculate and update a background model.
+This background model provides a statistical description of the entire background scene and can be non-recursive or recursive. 
+A non-recursive technique uses a sliding-window approach for background estimation. 
+The technique stores a buffer of the previous $L$ video frames, and estimates the background image based on the temporal variation of each pixel within the buffer.
+Non-recursive techniques are highly adaptive as they do not depend on the history beyond those frames stored in the buffer \ref{Cheung2007}, which may make the ideal for the tool kit.
+On the other hand, the storage requirement can be significant if a large buffer
+is needed to cope with slow-moving objects \ref{Cheung2007}, although that should not be a problem for the tool kit. Recursive techniques do not use a buffer but maintain a single background model based on each input frame. As a result, input frames from distant past could have an effect on the current background model \ref{Cheung2007} and hence may not be suitable for the tool kit.\\
+
+Foreground detection then identifies pixels in the video frame that cannot be adequately explained by the background model and outputs them as a binary candidate foreground mask. 
+Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \ref{Cheung2007}.\\
+
+\subsubsection{Frame Differencing, Median, Kalman and Gaussian Filtering.}
+Chenug \ref{Cheung2007}
