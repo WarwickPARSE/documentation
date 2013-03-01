@@ -13,7 +13,9 @@ $Volume_{PCS} * Transform Constant = Volume_{RWS}$
 \label{testing: transform between pcs and rws}
 \end{figure}
 
-In order to facilitate the calculation of the transform constant, many people were scanned and their minimum bounding box calculated two ways. Firstly the box was calculated using the PARSE tool kit to give the box's volume in PCS. Secondly, the volume of the box was calculate in RWS by measuring the height, width and breadth of the person. These figures were then divided to determine the transform constant as in Figure \ref{testing: table of data used to calculate the transform constant}.\\
+\subsection{Determining the Transform Constant}
+\label{determining the transform constant}
+Initially, the plan was for many people to be scanned and their minimum bounding box calculated two ways in order to facilitate the calculation of the transform constant, . Firstly the box would calculated using the PARSE tool kit to give the box's volume in PCS. Secondly, the volume of the box was calculate in RWS by measuring the height, width and breadth of the person. These figures would then be divided to determine the transform constant as in Figure \ref{testing: calculating the transform constant}.
 
 \begin{figure}[h]
 \begin{center}
@@ -22,6 +24,18 @@ $\frac{Volume_{RWS}}{Volume_{PCS}} = Transform Constant$
 \caption{Calculating the Transform Constant}
 \label{testing: calculating the transform constant}
 \end{figure}
+
+However, delays in the stitching algorithm \todo{right word?} for the four scans were holding up the determination of this transform constant and thus the testing of the volume rendering approach. 
+As such, a slightly different approach was taken. Instead of measuring a bounding box two ways, the transform constant would be determined as in Figure \ref{testing: calculating the transform constant using height} in terms of height, which only requires one un-stitched scan. Using height would result in the cube root of the transform constant for a direct volume to volume transform, but this is easily rectified. The transform was hence determined as in Figure \ref{testing: table of data used to calculate the transform constant}.\\
+
+\begin{figure}[h]
+\begin{center}
+$\frac{Height_{RWS}}{Height_{PCS}} = \sqrt[3]{Transform Constant}$
+\end{center}
+\caption{Calculating the Transform Constant using height}
+\label{testing: calculating the transform constant using height}
+\end{figure}
+
 \begin{figure}[h]
 \begin{center}
   \begin{tabular}{| l | r | r | r |}
@@ -35,9 +49,10 @@ $\frac{Volume_{RWS}}{Volume_{PCS}} = Transform Constant$
 \label{testing: table of data used to calculate the transform constant}
 \end{figure}
 
-This approach is not without a drawback, the real world bounding box must be calculated by hand, using a tape measure. 
+Both the height and bounding box approach are not without drawbacks, the real world measurements must be calculated by hand, using a tape measure. 
 Such a process is inherently error prone, as highlighted in Section \ref{spec:motivation}. 
 However it is hoped that, by taking as large a sample as possible and averaging the transform constants, such errors can be eliminated or atleast minimized.\\
+
 
 \subsection{Volume Rendering}
 \label{testing: volume rendering}
