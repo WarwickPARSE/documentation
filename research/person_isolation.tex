@@ -1,6 +1,10 @@
 \section{Background Subtraction and Person Isolation}
 \label{background subtraction and person isolation}
-In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \cite{Cheung2007}.\\
+In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. 
+
+Background subtraction is a commonly used class of techniques for segmenting out objects of interest in a scene for applications such as surveillance \cite{McIvor2000}.
+
+Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \cite{Cheung2007}.\\
 
 \subsection{Isolating Objects}
 \label{isolating objects}
@@ -32,7 +36,12 @@ is needed to cope with slow-moving objects \cite{Cheung2007}, although that shou
 Foreground detection then identifies pixels in the video frame that cannot be adequately explained by the background model and outputs them as a binary candidate foreground mask. 
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
-\subsubsection{Frame Differencing, Median, Kalman and Gaussian Filtering.}
+\subsubsection{Frame Differencing}
+\subsubsection{Approximate Median Filtering} \subsubsection{Kalman Filtering}
+\subsubsection{Median Filtering}
+\subsubsection{Mixture of Gaussian}
+
+\subsubsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering \cite{Cheung2007}.}
 Cheung \cite{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
 
 \begin{figure}[h]
