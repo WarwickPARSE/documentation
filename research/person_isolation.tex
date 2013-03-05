@@ -1,15 +1,10 @@
 \section{Background Subtraction and Person Isolation}
 \label{background subtraction and person isolation}
-In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. 
+In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. Background subtraction is a commonly used class of techniques for segmenting out objects of interest in a scene for applications such as surveillance \cite{McIvor2000}. Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \cite{Cheung2007}.\\
 
-Background subtraction is a commonly used class of techniques for segmenting out objects of interest in a scene for applications such as surveillance \cite{McIvor2000}.
+There are many algorithms for isolating objects and relatively few, to no, algorithms specifically designed to isolate only a person. Therefore, research focused on generic isolation algorithms.\\
 
-Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \cite{Cheung2007}.\\
-
-\subsection{Isolating Objects}
-\label{isolating objects}
-
-\subsubsection{General Approaches, Properties and Steps}
+\subsection{General Approaches, Properties and Steps}
 A common approach for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \cite{Cheung2007}.
 This general approach allows the isolation of non humanoid objects such as cars, but is still worthy of note because any person isolation algorithm must shared some similarities with generic object isolation algorithms.\\
 
@@ -36,12 +31,24 @@ is needed to cope with slow-moving objects \cite{Cheung2007}, although that shou
 Foreground detection then identifies pixels in the video frame that cannot be adequately explained by the background model and outputs them as a binary candidate foreground mask. 
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
+\subsection{Specific Algorithms}
+This section will give an overview of several background isolation algorithms in preparation for comparisons to be conducted in Section \ref{research: person isolation: comparisons}.\\
+
 \subsubsection{Frame Differencing}
 \subsubsection{Approximate Median Filtering} \subsubsection{Kalman Filtering}
 \subsubsection{Median Filtering}
 \subsubsection{Mixture of Gaussian}
+\subsubsection{Running Gaussian average}
+\subsubsection{Temporal Median Filter}
+\subsubsection{Kernel density estimation (KDE)}
+\subsubsection{Sequential KD approximation}
+\subsubsection{Cooccurence of image variations}
+\subsubsection{Eigenbackgrounds}
 
-\subsubsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering \cite{Cheung2007}.}
+\subsection{Comparisons of Algorithms}
+\label{research: person isolation: comparisons}
+
+\subsubsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering.}
 Cheung \cite{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
 
 \begin{figure}[h]
@@ -67,3 +74,6 @@ In Cheung's experiments \cite{Cheung2007} MoG achieved the best precision, MF wa
 Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. as a result, it typically left a long trail after a moving object \cite{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
 
 Such experiments suggest that, at this early stage, Adaptive Mean Filtering may be the way forward.\\
+
+
+\subsubsection{Comparing Running Gaussian average, Temporal Median Filter, Kernel density estimation, Sequential KD approximation, Cooccurence of image variations and Eigenbackgrounds.}
