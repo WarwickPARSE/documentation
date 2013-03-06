@@ -41,10 +41,7 @@ This section will give an overview of several background isolation algorithms in
 
 
 Mixture of Gaussians method has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. 
-The KDE model computes its value in the Gaussian kernels centred on the past 
-$n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. 
-However, efficient implementation through the Fast Gauss transform can
-limit the actual execution time \cite{Elgammal2003}.\\
+
 
 \subsubsection{Running Gaussian average}
 
@@ -72,6 +69,10 @@ parameters.
 Temporal Median Filter has a similar classification cost, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. \\
 
 \subsubsection{Kernel density estimation (KDE)}
+The KDE model computes its value in the Gaussian kernels centred on the past 
+$n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. 
+However, efficient implementation through the Fast Gauss transform can
+limit the actual execution time \cite{Elgammal2003}.\\
 
 
 \subsubsection{Sequential KD approximation}
