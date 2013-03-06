@@ -38,7 +38,18 @@ This section will give an overview of several background isolation algorithms in
 \subsubsection{Approximate Median Filtering} \subsubsection{Kalman Filtering}
 \subsubsection{Median Filtering}
 \subsubsection{Mixture of Gaussian}
+
+
+Mixture of Gaussians method has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. 
+The KDE model computes its value in the Gaussian kernels centred on the past 
+$n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. 
+However, efficient implementation through the Fast Gauss transform can
+limit the actual execution time \cite{Elgammal2003}.\\
+
 \subsubsection{Running Gaussian average}
+
+The fastest amongst the methods reviewed by Piccardi \cite{Piccardi2004} was the Running Gaussian Average, having a time complexity of $O(1)$.\\
+
 , where,
 for
 each
@@ -53,16 +64,32 @@ one
 or
 two
 parameters.
+
+
+
 \subsubsection{Temporal Median Filter}
+
+Temporal Median Filter has a similar classification cost, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. \\
+
 \subsubsection{Kernel density estimation (KDE)}
+
+
 \subsubsection{Sequential KD approximation}
+
+The SKDA method has $O(m)$ complexity, where $m$ is the number of modes of
+the approximated pdf. 
+The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}.\\
+
 \subsubsection{Cooccurence of image variations}
+
+The complexity for the cooccurrence-of-image-variations method has been
+estimated as $O(8*(n+L^4+L)/n^2)$, where $n$ is accounted for searching the nearest neighbours amongst the $n$ variations, $L^4$ is the estimated cost for computing the interpolation coefficients and L is the cost of applying them to the current block \cite{Piccardi2004}.\\
+
 \subsubsection{Eigenbackgrounds}
 
-\subsection{Comparisons of Algorithms}
-\label{research: person isolation: comparisons}
+The eigenbackground method has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors \cite{Piccardi2004}.\\
 
-\subsubsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering.}
+\subsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering.}
 Cheung \cite{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
 
 \begin{figure}[h]
@@ -88,27 +115,3 @@ In Cheung's experiments \cite{Cheung2007} MoG achieved the best precision, MF wa
 Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. as a result, it typically left a long trail after a moving object \cite{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
 
 Such experiments suggest that, at this early stage, Adaptive Mean Filtering may be the way forward.\\
-
-\subsubsection{Comparing Running Gaussian average, Temporal Median Filter, Kernel density estimation, Sequential KD approximation, Cooccurence of image variations and Eigenbackgrounds \cite{Piccardi2004}.}
-
-This section presents a comparative performance analysis based on
-speed, memory requirements and accuracy of Running Gaussian average, Temporal Median Filter, Kernel density estimation, Sequential KD approximation (SDKA), Cooccurence of image variations and Eigenbackgrounds isolation algorithms \cite{Piccardi2004}.\\
-
-The fastest amongst the methods reviewed by Piccardi \cite{Piccardi2004} was the Gaussian average, having a time complexity of $O(1)$.\\
-
-Temporal Median Filter has a similar classification cost, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. \\
-
-Mixture of Gaussians method has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. 
-The KDE model computes its value in the Gaussian kernels centred on the past 
-$n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. 
-However, efficient implementation through the Fast Gauss transform can
-limit the actual execution time \cite{Elgammal2003}.\\
-
-The SKDA method has $O(m)$ complexity, where $m$ is the number of modes of
-the approximated pdf. 
-The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}.\\
-
-The complexity for the cooccurrence-of-image-variations method has been
-estimated as $O(8*(n+L^4+L)/N^2)$, where $n$ is accounted for searching the nearest neighbours amongst the $n$ variations, $L^4$ is the estimated cost for computing the interpolation coefficients and L is the cost of applying them to the current block \cite{Piccardi2004}.\\
-
-The eigenbackground method has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors \cite{Piccardi2004}.\\
