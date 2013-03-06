@@ -92,44 +92,23 @@ Such experiments suggest that, at this early stage, Adaptive Mean Filtering may 
 \subsubsection{Comparing Running Gaussian average, Temporal Median Filter, Kernel density estimation, Sequential KD approximation, Cooccurence of image variations and Eigenbackgrounds \cite{Piccardi2004}.}
 
 This section presents a comparative performance analysis based on
-speed, memory requirements and accuracy of Running Gaussian average, Temporal Median Filter, Kernel density estimation, Sequential KD approximation, Cooccurence of image variations and Eigenbackgrounds isolation algorithms \cite{Piccardi2004}.\\
+speed, memory requirements and accuracy of Running Gaussian average, Temporal Median Filter, Kernel density estimation, Sequential KD approximation (SDKA), Cooccurence of image variations and Eigenbackgrounds isolation algorithms \cite{Piccardi2004}.\\
 
 The fastest amongst the methods reviewed by Piccardi \cite{Piccardi2004} was the Gaussian average, having a time complexity of $O(1)$.
-Temporal Median Filter has a similar classification cost, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. Mixture of Gaussians method has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. The KDE model computes its value in the Gaussian kernels centred on the past 
-n frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. However, efficient implementation through the Fast Gauss transform can
+Temporal Median Filter has a similar classification cost, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. 
+Mixture of Gaussians method has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. 
+The KDE model computes its value in the Gaussian kernels centred on the past 
+n frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. 
+However, efficient implementation through the Fast Gauss transform can
 limit the actual execution time \cite{Elgammal2003}.
 
 
 
 
 
-The
-model update has similar complexity,
-although
-it is
-likely
-to be
-performed
-at
-rates
-significantly
-lower than the frame
-rate.
-The
-SKDA method
-has
-O(ni
-+
-1)
-complexity, where
-m
-is
-the
-number of modes
-of
-the
-approximated
-pdf.
+The SKDA method has $O(m)$ complexity, where $m$ is the number of modes of
+the approximated pdf. 
+The precise number depends on the actual data samples.
 This value
 is
 not
@@ -138,7 +117,7 @@ a
 priori
 and
 depends on the actual data samples. However,
-in
+in Han2007
 [I
 I]
 this
