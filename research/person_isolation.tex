@@ -2,17 +2,14 @@
 \label{background subtraction and person isolation}
 In order to create a point cloud of a person, the tool kit must be able to isolate the person being scanned from the background environment. This is a well researched problem and is an issue for many applications in the computer vision field. Background subtraction is a commonly used class of techniques for segmenting out objects of interest in a scene for applications such as surveillance \cite{McIvor2000}. Even though many background subtraction algorithms have been proposed in the literature, the problem of identifying moving objects in complex environment is still far from being completely solved \cite{Cheung2007}.\\
 
-There are many algorithms for isolating objects and relatively few, to no, algorithms specifically designed to isolate only a person. Therefore, research focused on generic isolation algorithms.\\
-
-\subsection{General Approaches, Properties and Steps}
-A common approach for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \cite{Cheung2007}.
-This general approach allows the isolation of non humanoid objects such as cars, but is still worthy of note because any person isolation algorithm must shared some similarities with generic object isolation algorithms.\\
-
-These similarities between the algorithms for object isolation and person isolation are that both must \cite{Cheung2007}:\begin{itemize}
+There are many algorithms for isolating objects and relatively few, to no, algorithms specifically designed to isolate only a person. Therefore, research focused on generic isolation algorithms any person isolation algorithm must share some similarities with generic object isolation algorithms. These similarities between the algorithms for object isolation and person isolation are that both must \cite{Cheung2007}:\begin{itemize}
   \item Be robust against changes in illumination
   \item Avoid detecting non-stationary background objects such as swinging leaves
   \item React quickly to changes
 \end{itemize}
+
+\subsection{General Approaches, Properties and Steps}
+A common approach for isolating general objects is to perform background subtraction, which identifies moving objects from the portion of a video frame that differs significantly from a background model \cite{Cheung2007}.\\
 
 Approaches to object isolation vary from simple techniques such as frame differencing and adaptive median filtering, to more sophisticated probabilistic modelling techniques. 
 While complicated techniques often produce superior performance, experiments \cite{Cheung2007} show that simple techniques such as adaptive median filtering can produce good results with much lower computational complexity.\\
@@ -32,63 +29,36 @@ Foreground detection then identifies pixels in the video frame that cannot be ad
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
 \subsection{Specific Algorithms}
-This section will give an overview of several background isolation algorithms in preparation for comparisons to be conducted in Section \ref{research: person isolation: comparisons}.\\
+This section will give an overview of several background isolation algorithms.\\
 
 \subsubsection{Frame Differencing}
-\subsubsection{Approximate Median Filtering} \subsubsection{Kalman Filtering}
+\subsubsection{Approximate Median Filtering} 
+\subsubsection{Kalman Filtering}
 \subsubsection{Median Filtering}
 \subsubsection{Mixture of Gaussian}
-
-
-Mixture of Gaussians method has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. 
+The Mixture of Gaussians method (MOG) has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. MOG has a high accuracy \cite{Piccardi2004}.\\
 
 
 \subsubsection{Running Gaussian average}
-
-The fastest amongst the methods reviewed by Piccardi \cite{Piccardi2004} was the Running Gaussian Average, having a time complexity of $O(1)$.\\
-
-, where,
-for
-each
-pixel,
-the
-classification is
-just
-a thresholded difference and the
-background model update adapts
-just
-one
-or
-two
-parameters.
-
-
+The fastest amongst the methods reviewed by Piccardi was the Running Gaussian Average (RAG), having a time complexity of $O(1)$. RAG has a low/medium accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Temporal Median Filter}
+Temporal Median Filter (TMF) has a similar classification cost to RAG, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. TMF also has a similar accuracy to RAG, low/medium \cite{Piccardi2004}.\\
 
-Temporal Median Filter has a similar classification cost, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. \\
+\subsubsection{Kernel Density Estimation}
+The Kernel Density Estimation (KDE) model computes its value in the Gaussian kernels centred on the past $n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. However, efficient implementation through the Fast Gauss transform can limit the actual execution time \cite{Elgammal2003}. KDE has a high accuracy \cite{Piccardi2004}.\\
 
-\subsubsection{Kernel density estimation (KDE)}
-The KDE model computes its value in the Gaussian kernels centred on the past 
-$n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. 
-However, efficient implementation through the Fast Gauss transform can
-limit the actual execution time \cite{Elgammal2003}.\\
-
-
-\subsubsection{Sequential KD approximation}
-
-The SKDA method has $O(m)$ complexity, where $m$ is the number of modes of
+\subsubsection{Sequential Kernel Density approximation}
+The Sequential Kernel Density approximation (SKDA) method has $O(m)$ complexity, where $m$ is the number of modes of
 the approximated pdf. 
-The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}.\\
+The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}. SDKA has a medium/high accuracy \cite{Piccardi2004}.
 
 \subsubsection{Cooccurence of image variations}
-
-The complexity for the cooccurrence-of-image-variations method has been
-estimated as $O(8*(n+L^4+L)/n^2)$, where $n$ is accounted for searching the nearest neighbours amongst the $n$ variations, $L^4$ is the estimated cost for computing the interpolation coefficients and L is the cost of applying them to the current block \cite{Piccardi2004}.\\
+The complexity for the Cooccurrence of Image Variations (CIV) method has been
+estimated as $O(8*(n+L^4+L)/n^2)$, where $n$ is accounted for searching the nearest neighbours amongst the $n$ variations, $L^4$ is the estimated cost for computing the interpolation coefficients and L is the cost of applying them to the current block. CIV has a medium accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Eigenbackgrounds}
-
-The eigenbackground method has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors \cite{Piccardi2004}.\\
+The Eigenbackground method (EB) has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors. EB has a medium accuracy \cite{Piccardi2004}.\\
 
 \subsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering.}
 Cheung \cite{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
