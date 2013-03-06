@@ -29,36 +29,36 @@ Foreground detection then identifies pixels in the video frame that cannot be ad
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
 \subsection{Specific Algorithms}
-This section will give an overview of several background isolation algorithms.\\
+This section will give an overview of several background isolation algorithms and details their running time complexity and accuracy.\\
 
 \subsubsection{Frame Differencing}
 \subsubsection{Approximate Median Filtering} 
 \subsubsection{Kalman Filtering}
 \subsubsection{Median Filtering}
 \subsubsection{Mixture of Gaussian}
-The Mixture of Gaussians method (MOG) has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. MOG has a high accuracy \cite{Piccardi2004}.\\
+The Mixture of Gaussians method \cite{Stauffer1999} (MOG) has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. MOG has a high accuracy \cite{Piccardi2004}.\\
 
 
 \subsubsection{Running Gaussian average}
-The fastest amongst the methods reviewed by Piccardi was the Running Gaussian Average (RAG), having a time complexity of $O(1)$. RAG has a low/medium accuracy \cite{Piccardi2004}.\\
+The fastest amongst the methods reviewed by Piccardi was the Running Gaussian Average \cite{Wren1997,Koller1994} (RGA), having a time complexity of $O(1)$. RGA has a low/medium accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Temporal Median Filter}
-Temporal Median Filter (TMF) has a similar classification cost to RAG, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. TMF also has a similar accuracy to RAG, low/medium \cite{Piccardi2004}.\\
+Temporal Median Filter \cite{Lo2001,Cucchiara2003} (TMF) has a similar classification cost to RAG, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. TMF also has a similar accuracy to RAG, low/medium \cite{Piccardi2004}.\\
 
 \subsubsection{Kernel Density Estimation}
-The Kernel Density Estimation (KDE) model computes its value in the Gaussian kernels centred on the past $n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. However, efficient implementation through the Fast Gauss transform can limit the actual execution time \cite{Elgammal2003}. KDE has a high accuracy \cite{Piccardi2004}.\\
+The Kernel Density Estimation \cite{Elgammal2000} (KDE) model computes its value in the Gaussian kernels centred on the past $n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. However, efficient implementation through the Fast Gauss transform can limit the actual execution time \cite{Elgammal2003}. KDE has a high accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Sequential Kernel Density approximation}
-The Sequential Kernel Density approximation (SKDA) method has $O(m)$ complexity, where $m$ is the number of modes of
+The Sequential Kernel Density approximation \cite{Han2004} (SKDA) method has $O(m)$ complexity, where $m$ is the number of modes of
 the approximated pdf. 
 The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}. SDKA has a medium/high accuracy \cite{Piccardi2004}.
 
 \subsubsection{Cooccurence of image variations}
-The complexity for the Cooccurrence of Image Variations (CIV) method has been
+The complexity for the Cooccurrence of Image Variations \cite{Seki2003} (CIV) method has been
 estimated as $O(8*(n+L^4+L)/n^2)$, where $n$ is accounted for searching the nearest neighbours amongst the $n$ variations, $L^4$ is the estimated cost for computing the interpolation coefficients and L is the cost of applying them to the current block. CIV has a medium accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Eigenbackgrounds}
-The Eigenbackground method (EB) has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors. EB has a medium accuracy \cite{Piccardi2004}.\\
+The Eigenbackground method \cite{Oliver2000} (EB) has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors. EB has a medium accuracy \cite{Piccardi2004}.\\
 
 \subsection{Comparing Frame Differencing, Median, Kalman and Gaussian Filtering.}
 Cheung \cite{Cheung2007} conducted a study into the relative effectivenesses of Frame differencing (FD), Approximate median filtering (AMF), Kalman filtering (KF), Median filtering (MF) and Mixture of Gaussian (MoG). In Cheung's experiments, the aim was to isolate vehicles on the road, rather than people. The initial parameters of each filter is shown in Figure \ref{fig:background modelling schemes tested and their parameters}.\\
