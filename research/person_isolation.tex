@@ -46,8 +46,7 @@ TMF \cite{Lo2001,Cucchiara2003} has a similar classification cost to RGA, but up
 The KDE \cite{Elgammal2000} model computes its value in the Gaussian kernels centred on the past $n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. However, efficient implementation through the Fast Gauss transform can limit the actual execution time \cite{Elgammal2003}. KDE has a high accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Sequential Kernel Density approximation}
-The SKDA \cite{Han2004} method has $O(m)$ complexity, where $m$ is the number of modes of the approximated pdf. 
-The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}. SDKA has a medium/high accuracy \cite{Piccardi2004}.
+The SKDA \cite{Han2004} method has $O(m)$ complexity, where $m$ is the number of modes of the approximated posterior density function. The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}. SDKA has a medium/high accuracy \cite{Piccardi2004}.
 
 \subsubsection{Cooccurence of image variations}
 The complexity for the CIV \cite{Seki2003} method has been
