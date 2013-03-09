@@ -29,23 +29,23 @@ Foreground detection then identifies pixels in the video frame that cannot be ad
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
 \subsection{Specific Algorithms}
-This section will give an overview of several background isolation algorithms and details their running time complexity and accuracy. Two studies were looked at to determine the effectiveness of each method. Piccardi's \cite{Piccardi2004} study focused on Mixture of Gaussian MOG), Running Gaussian Average RGA), Temporal Median Filter (TMF), Kernel Density Estimation (KDE), Sequential Kernel Density Approximation (SDKA), Cooccurence of Image Variations (CIV) and Eigenbackgrounds (EB) whilst Cheung's \cite{Cheung2007} focused on Frame Differencing (FD), Approximate Median Filtering (AMF), Kalman Filtering (KF), MOG and Median Filtering (MF) \\
+This section will give an overview of several background isolation algorithms and details their running time complexity and accuracy. Two studies were looked at to determine the effectiveness of each method. Piccardi's study \cite{Piccardi2004} focused on the methods Mixture of Gaussian (MOG), Running Gaussian Average (RGA), Temporal Median Filtering (TMF), Kernel Density Estimation (KDE), Sequential Kernel Density Approximation (SDKA), Cooccurence of Image Variations (CIV) and Eigenbackgrounds (EB) whilst Cheung's \cite{Cheung2007} focused on Frame Differencing (FD), Approximate Median Filtering (AMF), Kalman Filtering (KF), MOG again and Median Filtering (MF) \\
 
 \subsubsection{Mixture of Gaussian}
 The MOG method \cite{Stauffer1999} has $O(m)$ complexity, where $m$ is the number of Gaussian distributions used, typically 3 to 5. MOG has a high accuracy \cite{Piccardi2004}. In Cheung's experiments \cite{Cheung2007}, MOG performed the best.\\
 
 \subsubsection{Running Gaussian Average}
-The fastest amongst the methods reviewed by Piccardi was the RGA \cite{Wren1997,Koller1994}, having a time complexity of $O(1)$. RGA has a low/medium accuracy \cite{Piccardi2004}.\\
+The fastest amongst the methods reviewed by Piccardi was the RGA method \cite{Wren1997,Koller1994}, having a time complexity of $O(1)$. RGA is a real-time system for tracking people and interpreting their behaviour. It runs at 10Hz on a standard computer, and has performed reliably on thousands of people in many
+different physical locations \cite{Wren1997}. RGA has a low/medium accuracy \cite{Piccardi2004}.\\
 
-\subsubsection{Temporal Median Filter}
+\subsubsection{Temporal Median Filtering}
 TMF \cite{Lo2001,Cucchiara2003} has a similar classification cost to RGA, but updating the  model is approximated as linear in the number of samples, $n$, therefore the corresponding complexity is consider $O(n)$. TMF also has a similar accuracy to RGA, low/medium \cite{Piccardi2004}.\\
 
 \subsubsection{Kernel Density Estimation}
 The KDE \cite{Elgammal2000} model computes its value in the Gaussian kernels centred on the past $n$ frames, thus the complexity is $O(n)$, where $n$ is typically as high as 100. However, efficient implementation through the Fast Gauss transform can limit the actual execution time \cite{Elgammal2003}. KDE has a high accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Sequential Kernel Density approximation}
-The SKDA \cite{Han2004} method has $O(m)$ complexity, where $m$ is the number of modes of
-the approximated pdf. 
+The SKDA \cite{Han2004} method has $O(m)$ complexity, where $m$ is the number of modes of the approximated pdf. 
 The precise number depends on the actual data samples, however this number has been shown to vary between 3 and 11 for video \cite{Han2007}. SDKA has a medium/high accuracy \cite{Piccardi2004}.
 
 \subsubsection{Cooccurence of image variations}
@@ -56,16 +56,17 @@ estimated as $O(8*(n+L^4+L)/n^2)$, where $n$ is accounted for searching the near
 The EB method \cite{Oliver2000} has an estimated complexity per pixel of $O(m)$, where $m$ is the number of the best eigenvectors. EB has a medium accuracy \cite{Piccardi2004}.\\
 
 \subsubsection{Frame Differencing}
-FD was significantly worse than all the other schemes in Cheung's experiments \cite{Cheung2007}
+Arguably the simplest background modelling technique, FD uses the video frame at time $t_1$ as the background model for the frame at time $t$. Since it uses only
+a single previous frame, FD may not be able to identify the interior pixels of a large, uniformly-coloured moving object \cite{Cheung2007}. This is commonly known as the aperture problem and may be a problem as people may wear single coloured clothing. FD was significantly worse than all the other schemes in Cheung's experiments \cite{Cheung2007}.
 
 \subsubsection{Approximate Median Filtering} 
 Even though AMF performed worse than MoG and MF, it produced a good performance with an extremely simple implementation. The only drawback of AMF was that it adapts slowly toward a large change in background \cite{Cheung2007}. However this is not expected to be a problem for the tool kit as the should not be any large changes in the background of a doctor's office.\\
 
 \subsubsection{Kalman Filtering}
-Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. as a result, it typically left a long trail after a moving object \cite{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
+Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. As a result, it typically left a long trail after a moving object \cite{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
 
 \subsubsection{Median Filtering}
-was a very close second in Cheung's experiments \cite{Cheung2007}
+Median Filtering is one of the most commonly-used background modelling techniques. The background estimate is defined to be the median at each pixel location of all the frames in the buffer. The assumption is that the pixel stays in the background for more than half of the frames in the buffer \cite{Cheung2007}. Median Filtering has been extended to color by replacing the median with the medoid [10]. The time complexity of computing the median is $O(L*log(L))$ for each pixel. MF was a very close second in Cheung's experiments \cite{Cheung2007}.
 
 \subsection{Conclusions}
 Such experiments suggest that, at this early stage, Adaptive Mean Filtering may be the way forward.\\
