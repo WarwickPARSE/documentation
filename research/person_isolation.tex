@@ -29,6 +29,7 @@ Foreground detection then identifies pixels in the video frame that cannot be ad
 Data validation examines the candidate mask and attempt to reduce false-positive or false-negative regions and eliminates those pixels that do not correspond to actual moving objects, and outputs the final foreground mask \cite{Cheung2007}.\\
 
 \subsection{Specific Algorithms}
+\label{person_isolation:specific algorithms}
 This section will give an overview of several background isolation algorithms and details their running time complexity and accuracy. Two studies were looked at to determine the effectiveness of each method. Piccardi's study \cite{Piccardi2004} focused on the methods Mixture of Gaussian (MOG), Running Gaussian Average (RGA), Temporal Median Filtering (TMF), Kernel Density Estimation (KDE), Sequential Kernel Density Approximation (SDKA), Cooccurence of Image Variations (CIV) and Eigenbackgrounds (EB) whilst Cheung's \cite{Cheung2007} focused on Frame Differencing (FD), Approximate Median Filtering (AMF), Kalman Filtering (KF), MOG again and Median Filtering (MF) \\
 
 \subsubsection{Mixture of Gaussian}
@@ -66,7 +67,7 @@ Even though AMF performed worse than MoG and MF, it produced a good performance 
 Visually, KF produced the worst foreground masks among all the schemes. Even with a large foreground threshold and slow adapting rates. As a result, it typically left a long trail after a moving object \cite{Cheung2007}. Slow updating may be an issue if the  person is required to move at all during the scan.\\
 
 \subsubsection{Median Filtering}
-Median Filtering is one of the most commonly-used background modelling techniques. The background estimate is defined to be the median at each pixel location of all the frames in the buffer. The assumption is that the pixel stays in the background for more than half of the frames in the buffer \cite{Cheung2007}. Median Filtering has been extended to color by replacing the median with the medoid \cite{Cucchiara2003}. The time complexity of computing the median is $O(L*log(L))$ for each pixel. MF was a very close second in Cheung's experiments \cite{Cheung2007}.
+Median Filtering is one of the most commonly-used background modelling techniques. The background estimate is defined to be the median at each pixel location of all the frames in the buffer. The assumption is that the pixel stays in the background for more than half of the frames in the buffer \cite{Cheung2007}. Median Filtering has been extended to color by replacing the median with the medoid \cite{Cucchiara2003}. The time complexity of computing the median is $O(L*log(L))$ for each pixel. MF was a very close second in Cheung's experiments .
 
-\subsection{Conclusions}
-Such experiments suggest that, at this early stage, Adaptive Mean Filtering may be the way forward.\\
+\subsection{Which method is best?}
+The experiments above \cite{Cheung2007,Piccardi2004} suggest that, at this early stage, MOG and KDE, as its accuracy depends on buffer size, may be of use as they are highly accurate and take linear time.\\
