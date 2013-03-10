@@ -1,32 +1,20 @@
 \section{Person Isolation}
 \label{design:person isolation}
 The Kinect is able to generate a skeleton frame associated with a person.
-
-
-After the research conducted in Section \ref\{background subtraction and person isolation}.
-
-
-
-This section details the two possible methods of person isolation considered.
-
-The first method uses the Kinect colour stream whereas the second uses the depth stream.
-
-
-The use of this skeleton meant that the group did not have to make use of computationally heavy computer vision algorithms to isolate a person, such as KDE or MOG as discussed in Section \ref{person_isolation:specific algorithms}.\\
+The group decided to make use of this to construct a person isolation method, rather than progress with computationally heavy generic computer vision algorithms to isolate a person, such as KDE or MOG as discussed in Section \ref{person_isolation:specific algorithms}.
+This section details the two possible methods of person isolation that were designed by the group. 
+The first method uses the Kinect colour stream whereas the second used the depth stream.\\
 
 \subsection{Colour Based Isolation}
 \label{design:colour based isolation}
 The Kinect can determine whether a colour pixel is associated with a detected skeleton. 
-Hence if a pixel is not associated, the colour value for that pixel can be set to white, isolating the person.\\
+Hence if a pixel is not associated, the colour value for that pixel can be set to white, isolating the person. 
+At this stage it was expected that colour based isolation would preform well, but it was unknown if a point cloud could be constructed using this method, as the colour data contains no depth.\\ 
 
 \subsection{Depth Based Isolation}
 \label{design:depth based isolation}
-The section's method makes use of the skeleton to determine the approximate depth of the person. 
-Any point whose depth value is outside a delta of the skeleton's depth is discarded.
-Cutting off base depth alone is not enough, as this method leaves a \textit{ring} of equal distant points in-line with the person. 
-To eliminate this ring, the positions of left and right most point of the person (i.e. the HandLeft joint and the HandRight joint) are calculated and anything outside of this range is also discarded. \\
-
-\subsection{One or the Other?}
-\label{design:one or the other?}
-At the design stage, it was expected that colour based isolation (Section \ref{design:colour based isolation}) would preform well, but it was unknown if a point cloud could be constructed using this method. 
-Conversely it was suspected that depth based isolation (Section \ref{design:depth based isolation}) would be less effective at removing all the miscellaneous non-person data, but may be better suited to creating a point cloud than colour based isolation. This suspicion was because the colour data contains no depth.\\ 
+This method make use of the skeleton to determine the approximate depth of the person.
+Any point whose depth value is outside a delta of the skeleton's depth would be discarded. 
+Cutting off based on depth alone is not enough, as doing so would leave a \textit{ring} of equal distant points in-line with the person. 
+To eliminate this ring, the positions of left and right most point of the person (i.e. the HandLeft joint and the HandRight joint) would also be used for cut off and anything outside of this range would also be discarded.
+This method would leave a square of floor under the person, but at the design stage it was hoped this could be removed at the point cloud level. Whilst a depth based cut off may not be as effective at removing all the miscellaneous non-person data, it may be better suited to creating a point cloud than colour based isolation. \\ 
