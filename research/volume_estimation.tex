@@ -1,8 +1,9 @@
 \section{Volume Estimation}
 \label{design:volume estimation}
 There are many techniques for estimating an arbitrary metric of a given 3 dimensional shape as well as the volume of the shape.
-Focus will first be on the arbitrary metrics, such as height, to see if the can be extended to calculate volume.\\
+Focus will first be on the arbitrary metrics, such as height, to see if the can be extended to calculate volume, before moving to volume estimation methods.\\
 
+\subsection{Estimating the Height of Trees}
 LIDAR has previously been used to estimate the height of trees from above \cite{Maltamo2006}. Three laser scanning-based methods were used to compute the height of the trees, a direct prediction model for the stem volume at plot level, a volume prediction system based on the modelled percentiles of the basal area diameter distribution and a parameter prediction method used to determinate Weibull based basal area diameter distributions \cite{Frechet1927} for the plot-level stem volume prediction. The best results were obtained with the first method, i.e. the model that predicts plot-level stem volumes directly \cite{Maltamo2006}.\\
 
 In order to calculate the height, the laser reflections from non-ground objects, such as trees and buildings were classified as non-ground hits using TerraScan software \cite{Solid2013}. Conversely other points were classified as ground hits.
@@ -29,3 +30,5 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 \label{fig:calculating_the_volume_of_the_minimum_bounding_box}
 \end{figure}
 
+\subsection{Determination of prostate volume by transrectal ultrasound}
+\cite{K1991}
