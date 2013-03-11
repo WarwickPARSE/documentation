@@ -1,7 +1,7 @@
 \section{Person Isolation}
 \label{design:person isolation}
 The Kinect is able to generate a skeleton frame associated with a person.
-The group decided to make use of this to construct a person isolation method, rather than progress with computationally heavy generic computer vision algorithms to isolate a person, such as KDE or MOG as discussed in Section \ref{person_isolation:specific algorithms}.
+The group decided to make use of this to construct a person isolation method, rather than progress with computationally heavy generic computer vision algorithms to isolate a person, such as \todo{examples} as discussed in Section \ref{person_isolation:specific algorithms}.
 This section details the two possible methods of person isolation that were designed by the group. 
 The first method uses the Kinect colour stream whereas the second used the depth stream.\\
 
@@ -17,4 +17,4 @@ This method make use of the skeleton to determine the approximate depth of the p
 Any point whose depth value is outside a delta of the skeleton's depth would be discarded. 
 Cutting off based on depth alone is not enough, as doing so would leave a \textit{ring} of equal distant points in-line with the person. 
 To eliminate this ring, the positions of left and right most point of the person (i.e. the HandLeft joint and the HandRight joint) would also be used for cut off and anything outside of this range would also be discarded.
-This method would leave a square of floor under the person, but at the design stage it was hoped this could be removed at the point cloud level. Whilst a depth based cut off may not be as effective at removing all the miscellaneous non-person data, it may be better suited to creating a point cloud than colour based isolation. \\ 
+This method would leave a square of floor under the person, but at the design stage it was hoped this could be removed at the point cloud level. Whilst a depth based cut off may not be as effective at removing all the miscellaneous non-person data, it may be better suited to creating a point cloud than colour based isolation.\\ 
