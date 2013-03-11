@@ -9,17 +9,17 @@ In order to calculate the height, the laser reflections from non-ground objects,
 Canopy height of a non-ground object is then calculated as the difference between the height of the non-ground object and the neighbouring ground points. 
 The accuracy of this method was found to be better than $\pm$15cm \cite{Maltamo2006}, when compare to field-measured volumes obtained with the Finnish conventional method Inventory by Compartments. \cite{Koivuniemi2006}.\\
 
-It should be noted that in this method the LIDAR emitter was above the target \cite{Maltamo2006}, rather than in front of them as is likely for the project case. This method then translate to using the top and the bottom most point of the cloud to calculate height. However it may be able to be extended to calculate metrics such as depth and breath, from which a minimum bounding box could be determined.\\
+It should be noted that in this method the LIDAR emitter was above the target \cite{Maltamo2006}, rather than in front of them as is likely in the case of the project. This method then translate to using the top and the bottom most point of the cloud to calculate height. However it may be able to be extended to calculate metrics such as depth and breath, from which a minimum bounding box could be determined.\\
 
 A minimum bounding box is defined as follows in \ref{fig:bounding_box_definition}.\\
 
 \begin{figure}[h]
-\textit{Definition: For a point set in N dimensions, it refers to the box with the smallest measure (area, volume, or hypervolume in higher dimensions) within which all the points lie.}
-\caption {Minimum Bounding Box Definition \cite{Barequet2001}}
+\textit{Definition: For a point set in N dimensions, it refers to the box with the smallest measure (area, volume, or hypervolume in higher dimensions) within which all the points lie} \cite{Barequet2001}.
+\caption {Minimum bounding box definition}
 \label{fig:bounding_box_definition}
 \end{figure}
 
-For the purposes of PARSE, this box would be three dimensional and the volume of the minimum bounding box could be calculated as in Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box}.\\
+For the purposes of the project, this box would be three dimensional and the volume of the minimum bounding box could be calculated as in Figure \ref{fig:calculating_the_volume_of_the_minimum_bounding_box}.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -28,3 +28,4 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 \caption{Calculating the volume of the minimum bounding box}
 \label{fig:calculating_the_volume_of_the_minimum_bounding_box}
 \end{figure}
+
