@@ -7,4 +7,7 @@ LIDAR has previously been used to estimate the height of trees from above \cite{
 
 In order to calculate the height, the laser reflections from non-ground objects, such as trees and buildings were classified as non-ground hits using TerraScan software \cite{Solid2013}. Conversely other points were classified as ground hits.
 Canopy height of a non-ground object is then calculated as the difference between the height of the non-ground object and the neighbouring ground points. 
-The accuracy of this method was found to be better than $\pm$15cm, when compare to field-measured volumes obtained with the Finnish conventional inventory by compartments. \cite{Maltamo2006}.\\
+The accuracy of this method was found to be better than $\pm$15cm \cite{Maltamo2006}, when compare to field-measured volumes obtained with the Finnish conventional method Inventory by Compartments. \cite{Koivuniemi2006}.\\
+
+It should be noted that in this method the LIDAR emitter was above the target \cite{Maltamo2006}, rather than in front of them as is likely for the project case. This method then translate to using the top and the bottom most point of the cloud to calculate height. However it may be able to be extended to calculate metrics such as depth and breath, from which a bounding box could be determined.\\
+
