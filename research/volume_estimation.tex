@@ -1,12 +1,15 @@
 \section{Volume Estimation}
 \label{design:volume estimation}
-There are many techniques for estimate the volume of an arbitrary 3 dimensional shape. 
+There are many techniques for estimate the volume of an arbitrary 3 dimensional shape. \\
 
-LIDAR has previously been used to estimate the height of trees from above \cite{Maltamo2006}.
+LIDAR has previously been used to estimate the height of trees from above \cite{Maltamo2006}.\\
+ 
+Three \todo{of the} laser scanning-based methods were compared were a direct prediction model for the stem volume at plot level, a volume
+prediction system based on the modelled percentiles of the basal area diameter distribution and a parameter prediction method used to determinate Weibull-based basal area diameter distributions for the plot-level stem volume prediction. \\
 
-Three laser scanning-based methods were used
+The predicted volumes were also compared with field-measured volumes obtained with the Finnish conventional inventory by compartments. 
+The best results were obtained with the first method, i.e. the model that predicts plot-level stem volumes directly \cite{Maltamo2006}.\\
 
-compared were (1) a direct prediction model for the stem volume at plot level, (2) a volume
-prediction system based on the modelled percentiles of the basal area diameter distribution, and (3) a
-parameter prediction method used to determinate Weibull-based basal area diameter distributions
-for the plot-level stem volume prediction. 
+In order to calculate the height, the laser reflections from non-ground objects, such as trees and buildings were classified as non-ground hits using TerraScan software \cite{Solid2013}. Conversely other points were classified as ground hits.
+Canopy height of a non-ground object is then calculated as the difference between the height of the non-ground object and the neighbouring ground points. 
+The accuracy of this method was found to be better than $\pm$15cm\cite{Maltamo2006}.\\
