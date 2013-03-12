@@ -31,11 +31,8 @@ $Volume = (xmax -xmin) * (ymax - ymin) * (zmax - zmin)$
 \end{figure}
 
 \subsection{Determination of prostate volume by transrectal ultrasound}
-
-The volumes of prostates has been calculated from ultrasound scanners previously using many methods \cite{K1991}. 
-Many methods have been tested, including step-section planimetry and the elliptical volume method.\\ 
-
-All patients underwent subsequent radical prostatectomy or cystoprostatectomy. Prostate specimen weights were compared with the results of each volume estimation method. 
+The volumes of prostates has been calculated from ultrasound scanners previously using many methods. 
+Many methods have been tested, including step-section planimetry and the elliptical volume method. After the volume of the prostate was estimated, all patients underwent subsequent radical prostatectomy or cystoprostatectomy and prostate specimen weights were compared with the results of each volume estimation method \cite{K1991}.\\ 
 
 \subsubsection{Step-Section Planimetry}
 Step-section planimetry (SSP) is so called because of the planimeter, a measuring instrument used to determine the area of an arbitrary two-dimensional shape by traversing the perimeter \cite{Bryant2011}. 
@@ -45,16 +42,23 @@ SSP is often assumed to be the most accurate means of volume measurement and in 
 Such a correlation coefficient indicates the method is highly accurate.
 As the method only needs to traverse the perimeter once it will have a low running time which is essential as it will be called on many planes. As the method is traversing up the point cloud representation of an object, the method will run in $O(n)$, where n is the number of points in the point cloud. Also, whilst the area/volume is being calculated other useful metrics could be determined, such as perimeter of a step \footnote{or a plane}.\\
 
-Similar method to SSP have been used in other areas of medicine, such as measuring brain, fetal lung and heart volumes \cite{Rosen1990,Rypens2001,}
+Similar method to SSP have been used in other areas of medicine, such as measuring brain, fetal lung and heart volumes \cite{Rosen1990,Rypens2001,Graham1971}.\\
 
 \subsubsection{Elliptical volume}
 Much like a bounding box, an ellipsoid can be formed around a person using their height, depth and breadth and the volume of this ellipsoid is then calculated.
 For prostates, the elliptical volume method, demonstrated a correlation coefficient of 0.90 \cite{K1991}. Again, this suggests a high accuracy.
-However, this high performance may be due to the roughly walnut shaped nature of a prostate \cire{D2003}. 
+However, this high performance may be due to the roughly walnut shaped nature of a prostate \cite{D2003}. 
 On a less spherical object, such as a person, the elliptical method may output a higher volume than the true value, as with the bounding box.\\
 
 If the min and max values of a object were stored in it's point cloud, the ellipsoid could be computed in $O(1)$, similar to the bounding box. 
 If the min and max values need to be computed on the fly, this would bring the complexity up to $O(n)$, where n is the number of points in the point cloud, putting its running time in the same order as the step-section method.
-As elliptical volume is less accurate, takes the same time and cannot give other information, such as perimeter, step-section will be the bases of volume calculation in the tookit.
+As elliptical volume is less accurate, takes the same time and cannot give other information, such as perimeter, step-section will be the bases of volume calculation in the toolkit.
 
 \subsubsection{Convex Hulls}
+Because the Kinect data is quite noise, it may be necessary to compute the convex hull of a plane to give more accurate data from the SSP method. Three convex hull methods were researched, Gift-Wrapping \cite{Cormen2001}, Quick Hull and the Kirkpatrick–Seidel algorithm.\\
+
+Gift-Wrapping, also known as Jarvis' march \cite{Jarvis1973},
+
+%http://en.wikipedia.org/wiki/Gift_wrapping_algorithm
+%http://en.wikipedia.org/wiki/QuickHull
+%http://en.wikipedia.org/wiki/Kirkpatrick%E2%80%93Seidel_algorithm
