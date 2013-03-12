@@ -9,4 +9,5 @@ git add design
 git add spec
 git add pm
 git add research
+git add images
 git commit -m "$1"

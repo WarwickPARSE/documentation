@@ -61,9 +61,15 @@ Gift-Wrapping (GW), also known as Jarvis' march \cite{Jarvis1973}, is similar in
 GW runs in $O(nh)$  \cite{Cormen2001} where $n$ is the number of points in the input and $h$ is the number of points in the hull. In the project case, $h$ is likely to be in the order of $O(n)$ as the points are expected to already be almost hull like. 
 Hence GW can be, for the purposes of the project, said to run in $O(n^2)$. However, GW is simple to implement so may be the method implemented.\\
 
-Quick Hull (QW) uses a divide and conquer approach similar to that of QuickSort, which its name derives from. Its average case complexity is considered to be O(n * log(n)), whereas in the worst case it takes O(n2) (quadratic).
+Quick Hull (QH) uses a divide and conquer approach similar to that of QuickSort, which its name derives from. 
+Its average case complexity is considered to be $O(n * log(n))$, whereas in the worst case it takes $O(n^2)$.
+As previously stated, project data is likely to near to the worst case.
+Hence, QH may perform no better than GW and may be more difficult to implement.
+The convex hull is unique for a given point set \cite{Sedgewick2012}, so accuracy is not a concern when picking an algorithm.\\
 
+The Kirkpatrick–Seidel algorithm runs in $O(n*log(h))$, for the purposes of the project, this becomes $O(n*log(n))$
 
+to be in the  Thus, the algorithm is output-sensitive: its running time depends on both the input size and the output size. Another output-sensitive algorithm, the gift wrapping algorithm, was known much earlier, but the Kirkpatrick–Seidel algorithm has an asymptotic running time that is significantly smaller and that always improves on the O(n log n) bounds of non-output-sensitive algorithms. The Kirkpatrick–Seidel algorithm is named after its inventors, David G. Kirkpatrick and Raimund Seidel.[1]
 
 
 %http://en.wikipedia.org/wiki/Gift_wrapping_algorithm
