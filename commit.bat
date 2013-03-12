@@ -1,1 +1,0 @@
-commit.sh %1
