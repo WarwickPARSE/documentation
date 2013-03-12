@@ -1,0 +1,613 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@ARTICLE{A.R.BehnkeJr.M.D1995,
+  author = {A. R. Behnke Jr. M.D, B. G. Feen M.D, W. C. Welham M.D.},
+  title = {{THE} {SPECIFIC} {GRAVITY} {OF} {HEALTHY} {MEN}: {BODY} {WEIGHT}
+	+ {VOLUME} {AS} {AN} {INDEX} {OF} {OBESITY}},
+  journal = {Obesity Research},
+  year = {1995},
+  volume = {3},
+  pages = {295-300},
+  owner = {Bernard},
+  timestamp = {2013.02.19}
+}
+
+@ARTICLE{Barber1996,
+  author = {C. Bradford Barber and David P. Dobkin and Hannu Huhdanpaa},
+  title = {{T}he {Q}uickhull algorithm for convex hulls},
+  journal = {ACM TRANSACTIONS ON MATHEMATICAL SOFTWARE},
+  year = {1996},
+  volume = {22},
+  pages = {469--483},
+  number = {4}
+}
+
+@TECHREPORT{Barequet2001,
+  author = {Gill Barequet and Sariel Har-Peleld},
+  title = {{E}fficiently {A}pproximating the {M}inimum-{V}olume {B}ounding {B}ox
+	of a {P}oint {S}et in {T}hree {D}imensions},
+  institution = {University of Illinois},
+  year = {2001},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.05}
+}
+
+@ARTICLE{Bauer2011,
+  author = {S Bauer and J Wasza and S Haase et al},
+  title = {{M}ulti-modal surface registration for markerless initial patient
+	setup in radiation threapy using microsoft's {K}inect sensor},
+  journal = {Computer Vision Workshops (ICCV Workshops)},
+  year = {2011},
+  pages = {1175-1181},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.06}
+}
+
+@BOOK{Bryant2011,
+  title = {{H}ow round is your circle? {W}here engineering and mathematics meet.},
+  publisher = {Princeton, NJ: Princeton University Press.},
+  year = {2011},
+  author = {Bryant, John and Sangwin, Chris},
+  abstract = {{See the review of the hardback edition (2008) in Zbl 1166.00001.}},
+  classmath = {{*00A05 (General mathematics) 00A69 (General applied mathematics)
+	00A79 (Physics) }},
+  language = {English}
+}
+
+@ARTICLE{C1968March,
+  author = {Steinkamp R C},
+  title = {{B}ody {C}omposition in relation to disease.},
+  journal = {Am J Public Health Nations Health},
+  year = {1968, March},
+  volume = {58},
+  pages = {473-476},
+  owner = {Bernard},
+  timestamp = {2013.02.16}
+}
+
+@MISC{Cheung2007,
+  author = {Sen-Ching S. Cheung and Chandrika Kamath},
+  title = {{R}obust techniques for background subtraction in urban traffic video},
+  year = {2007}
+}
+
+@BOOK{Cormen2001,
+  title = {{F}inding the convex hull. {I}ntroduction to {A}lgorithms},
+  publisher = {MIT Press and McGraw-Hill.},
+  year = {2001},
+  author = {Cormen, Thomas H and Leiserson, Charles E andRivest, Ronald L and
+	Stein, Clifford},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.12}
+}
+
+@ARTICLE{Cucchiara2003,
+  author = {Rita Cucchiara and Costantino Grana and Massimo Piccardi and Andrea
+	Prati},
+  title = {{D}etecting {M}oving {O}bjects, {G}hosts and {S}hadows in {V}ideo
+	{S}treams},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {2003},
+  volume = {25},
+  pages = {1337--1342}
+}
+
+@ARTICLE{D2003,
+  author = {Shen D and Zhan Y and Davatzikos C},
+  title = {{S}egmentation of prostate boundaries from ultrasound images using
+	statistical shape model},
+  journal = {IEEE Trans Med Imaging},
+  year = {2003},
+  volume = {4},
+  pages = {539-551},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.12}
+}
+
+@ARTICLE{Ducimetiere1986,
+  author = {P Ducimetiere and J Richard and F Cambien},
+  title = {{T}he pattern of {S}ubcutaneous fat distribution in middle-aged men
+	and the risk of coronary heart disease.},
+  journal = {The Paris Prospective Study. International Journal of Obesity},
+  year = {1986},
+  volume = {10},
+  pages = {229-240},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.06}
+}
+
+@ARTICLE{Elgammal2003,
+  author = {Ahmed Elgammal and Ramani Duraiswami and Larry S. Davis},
+  title = {{E}fficient {K}ernel {D}ensity {E}stimation using the {F}ast {G}auss
+	{T}ransform with {A}pplications to {C}olor {M}odeling and {T}racking},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {2003},
+  volume = {25},
+  pages = {1499--1504}
+}
+
+@INPROCEEDINGS{Elgammal2000,
+  author = {Ahmed Elgammal and David Harwood and Larry Davis},
+  title = {{N}on-parametric model for background subtraction},
+  booktitle = {FRAME-RATE WORKSHOP, IEEE},
+  year = {2000},
+  pages = {751--767}
+}
+
+@ARTICLE{Flegal2012,
+  author = {Flegal, Katherine.},
+  title = {{P}revalence of {O}besity and {T}rends in the {D}istribution of {B}ody
+	{M}ass {I}ndex {A}mong {US} {A}dults, 1999-2010},
+  journal = {JAMA},
+  year = {2012},
+  volume = {307},
+  pages = {491-497},
+  owner = {Bernard},
+  timestamp = {2013.02.17}
+}
+
+@ARTICLE{Frechet1927,
+  author = {Maurice Fréchet},
+  title = {{S}ur la loi de probabilité de l'écart maximum},
+  journal = {Annales de la Société Polonaise de Mathematique},
+  year = {1927},
+  volume = {6},
+  pages = {93 - 116},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.11}
+}
+
+@ARTICLE{Goodpaster1997,
+  author = {B Goodpaster and F Thaete and J Simoneau et al},
+  title = {{S}ubcutaneous {A}bdominal {F}at and {T}high {M}uscle {C}omposition
+	{P}redict {I}nsulin {S}ensitivity {I}ndependently of {V}isceral {F}at.},
+  journal = {Diabetes},
+  year = {1997},
+  volume = {46},
+  pages = {1579-1585},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.06}
+}
+
+@ARTICLE{Graham1971,
+  author = {Thomas P. Graham and Jay M. Jarmakani and Ramon V. Canent and Mary
+	N. Morrow},
+  title = {{L}eft {H}eart {V}olume {E}stimation in {I}nfancy and {C}hildhood
+	: {R}eevaluation of {M}ethodology and {N}ormal {V}alues},
+  journal = {American Heart Association},
+  year = {1971},
+  volume = {43},
+  pages = {895-904},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.12}
+}
+
+@ARTICLE{Han2004,
+  author = {Han,B. and Comaniciu, D. and Davis, Larry S.},
+  title = {{S}equential kernel density approximation through mode propagation:
+	applications to background modeling},
+  journal = {Proc. ACCV},
+  year = {2004},
+  volume = {2004},
+  month = {2004///},
+  abstract = {{D}ensity-based modeling of visual features is very commonin computer
+	vision, either by using non-parametric techniques or through representing
+	the underlying density function as a weighted sum of {G}aussians.
+	{A} number of real-time tasks such as background modeling or modeling
+	the appearance of a moving target require sequential density estimation,
+	where new data is incorporated in the model as it becomes avail-
+	able. {N}evertheless, current methods for updating the den- sity
+	function either lack flexibility, by fixing the number of {G}aussians
+	in the mixture, or require large memory amounts, by maintaining a
+	non-parametric representation of the den- sity. {T}his paper presents
+	an efficient method for recursive density approximation that relies
+	on the propagation of the density modes. {A}t each time step, the
+	modes of the density are re-estimated and a {G}aussian component
+	is assigned to each mode. {T}he covariance of each component is derived
+	from the {H}essian matrix estimated at the mode location. {T}o detect
+	the modes we employ the variable-bandwidth mean shift. {W}hile the
+	proposed density representation is mem- ory efficient (which is typical
+	for mixture densities), it in- herits the flexibility of non-parametric
+	methods, by allow- ing the number of modes to adapt in time. {W}e
+	show that the same mode propagation principle applies for subspaces
+	derived from eigen analysis. {E}xtensive experimental back- ground
+	modeling results demonstrate the performance of the method.}
+}
+
+@MISC{Han2007,
+  author = {Bohyung Han and Dorin Comaniciu and Ying Zhu and Larry S. Davis},
+  title = {{S}equential {K}ernel {D}ensity {A}pproximation and {I}ts {A}pplication
+	to {R}eal-{T}ime {V}isual {T}racking},
+  year = {2007}
+}
+
+@ARTICLE{Iat-FaiLeong2007,
+  author = {Iat-Fai Leong, Jing-Jing Fang, Ming-June Tsai},
+  title = {{A}utomatic body feature extraction from a marker-less scanned human
+	body},
+  journal = {Computer Aided Design},
+  year = {2007},
+  volume = {39},
+  pages = {568-582},
+  owner = {Bernard},
+  timestamp = {2013.02.16}
+}
+
+@ARTICLE{Izadi2011,
+  author = {S Izadi and D Kim and O Hilliges et al},
+  title = {{K}inect{F}usion: real-time 3{D} reconstruction and interaction using
+	a moving depth camera.},
+  journal = {Proceedings of the 24th annual ACM symposium on User interface software
+	and technology},
+  year = {2011},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.06}
+}
+
+@ARTICLE{Jarvis1973,
+  author = {Jarvis, R. A.},
+  title = {{O}n the {I}dentification of the {C}onvex {H}ull of a {F}inite {S}et
+	of {P}oints in the {P}lane},
+  journal = {Information Processing Letters},
+  year = {1973},
+  volume = {2},
+  pages = {18--21},
+  number = {1},
+  month = mar,
+  citeulike-article-id = {7935516},
+  keywords = {algorithm, convex, hull},
+  posted-at = {2010-10-01 17:26:27},
+  priority = {0}
+}
+
+@ARTICLE{K1991,
+  author = {Terris M K and Stamey T A},
+  title = {{D}etermination of prostate volume by transrectal ultrasound.},
+  journal = {The Journal of Urology},
+  year = {1991},
+  volume = {5},
+  pages = {984-987},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.11}
+}
+
+@ELECTRONIC{Kalvala2013,
+  author = {Sara Kalvala},
+  year = {2013},
+  title = {{I}nteraction {L}ab (i{L}ab)},
+  organization = {Warwick University iLab},
+  address = {www.go.warwick.ac.uk/ilab},
+  url = {http://www2.warwick.ac.uk/fac/sci/dcs/teaching/ilab},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.27}
+}
+
+@ARTICLE{Koivuniemi2006,
+  author = {Jyrki Koivuniemi and Kari T. Korhonen},
+  title = {{I}nventory by {C}ompartments},
+  journal = {Managing Forest Ecosystems},
+  year = {2006},
+  volume = {Volume 10},
+  pages = {271-278},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.11}
+}
+
+@INPROCEEDINGS{Koller1994,
+  author = {D. Koller and J. Weber and T. Huang and J. Malik and G. Ogasawara
+	and B. Rao and S. Russell},
+  title = {{T}owards {R}obust {A}utomatic {T}raffic {S}cene {A}nalysis in {R}eal-{T}ime},
+  year = {1994},
+  pages = {126--131}
+}
+
+@CONFERENCE{Kullberg2010,
+  author = {Kullberg, J},
+  title = {{W}hole-{B}ody {MRI} for analysis of body composition},
+  booktitle = {2010 IEEE International Symposium on Biomedical Imaging: From Nano
+	to Macro},
+  year = {2010},
+  owner = {Bernard},
+  timestamp = {2013.02.16}
+}
+
+@ARTICLE{Lo2001,
+  author = {Lo, B. and Velastin, S.},
+  title = {{Automatic congestion detection system for underground platforms}},
+  journal = {Intelligent Multimedia},
+  year = {2001},
+  month = jan,
+  abstract = {{system for underground platforms Lo, BPL Velastin, SA Dept. of Electron.
+	Eng., King's Coll., London;}},
+  citeulike-article-id = {5127902},
+  citeulike-linkout-0 = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=925356},
+  keywords = {analysis, behaviour, surveillance, vision},
+  local-url = {file://localhost/Users/max/Documents/Papers/2001/Lo/Intelligent\%20Multimedia\%202001\%20Lo.pdf},
+  posted-at = {2009-07-12 16:23:37},
+  priority = {0},
+  url = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=925356}
+}
+
+@INPROCEEDINGS{Makadia2006,
+  author = {Ameesh Makadia and Alexander Patterson and IV and Kostas Daniilidis},
+  title = {{F}ully automatic registration of 3d point clouds},
+  booktitle = {IN CVPR ’06: PROCEEDINGS OF THE 2006 IEEE COMPUTER SOCIETY CONFERENCE
+	ON COMPUTER VISION AND PATTERN RECOGNITION},
+  year = {2006},
+  pages = {1297-1304},
+  abstract = {{W}e propose a novel technique for the registration of 3{D} point
+	clouds which makes very few assumptions: we avoid any manual rough
+	alignment or the use of landmarks, displacement can be arbitrarily
+	large, and the two point sets can have very little overlap. {C}rude
+	alignment is achieved by estimation of the 3{D}-rotation from two
+	{E}xtended {G}aussian {I}mages even when the data sets inducing them
+	have partial overlap. {T}he technique is based on the correlation
+	of the two {EGI}s in the {F}ourier domain and makes use of the spherical
+	and rotational harmonic transforms. {F}or pairs with low overlap
+	which fail a critical verification step, the rotational alignment
+	can be obtained by the alignment of constellation images generated
+	from the {EGI}s. {R}otationally aligned sets are matched by correlation
+	using the {F}ourier transform of volumetric functions. {A} fine alignment
+	is acquired in the final step by running {I}terative {C}losest {P}oints
+	with just few iterations.},
+  owner = {Robin}
+}
+
+@ARTICLE{Maltamo2006,
+  author = {Matti Maltamo and Kalle Eerikainen and Petteri Packalen and Juha
+	Hyyppa},
+  title = {{E}stimation of stem volume using laser scanning-based canopy height
+	metrics},
+  journal = {Forestry},
+  year = {2006},
+  volume = {Volume 79, Issue 2},
+  pages = {Pp. 217-229},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.11}
+}
+
+@INPROCEEDINGS{McIvor2000,
+  author = {McIvor, Alan M.},
+  title = {{Background Subtraction Techniques}},
+  year = {2000},
+  citeulike-article-id = {3787653},
+  citeulike-linkout-0 = {http://citeseer.ist.psu.edu/old/455262.html},
+  comment = {Short overview article of background-subtraction techniques. Bit skimpy
+	on implementation details.},
+  journal = {In Proc. of Image and Vision Computing, Auckland, New Zealand, 2000.},
+  keywords = {background-subtraction, segmentation},
+  posted-at = {2008-12-14 15:45:47},
+  url = {http://citeseer.ist.psu.edu/old/455262.html}
+}
+
+@ELECTRONIC{NHSNationalInstituteforHealthResearch2010,
+  author = {NHS National Institute for Health Research, University of Birmingham},
+  month = {June},
+  year = {2010},
+  title = {{B}ody {V}olume {I}ndex 3{D} {S}canner for obesity},
+  language = {English},
+  howpublished = {Onlne Press Release},
+  organization = {National Horizon Scanning Centre},
+  url = {https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&cad=rja&ved=0CIYBEBYwCA&url=http%3A%2F%2Fwww.hsc.nihr.ac.uk%2Ffiles%2Fdownloads%2F1587%2F2041.cb2fe4db.SelectResearchBodyVolumeIndex3DScannerforObesity.pdf&ei=I0whUa70PLD34QTAoYHgAg&usg=AFQjCNGyUTvxI4RgGCK2bHVO4V0QqWQjxQ&sig2=WSz-JageNOR5aEIeG7TvDg&bvm=bv.42553238,d.bGE},
+  owner = {Bernard},
+  timestamp = {2013.02.17}
+}
+
+@ARTICLE{Oliver2000,
+  author = {Nuria M. Oliver and Barbara Rosario and Alex P. Pentland},
+  title = {{A} {B}ayesian computer vision system for modeling human interactions},
+  journal = {IEEE TRANSACTIONS ON PATTERN ANALYSIS AND MACHINE INTELLIGENCE},
+  year = {2000},
+  volume = {22},
+  pages = {831--843},
+  number = {8}
+}
+
+@INPROCEEDINGS{Piccardi2004,
+  author = {Piccardi, M.},
+  title = {{Background subtraction techniques: a review}},
+  booktitle = {IEEE International Conference on Systems, Man and Cybernetics},
+  year = {2004},
+  volume = {4},
+  pages = {3099--3104},
+  month = oct,
+  publisher = {IEEE},
+  abstract = {{Background subtraction is a widely used approach for detecting moving
+	objects from static cameras. Many different methods have been proposed
+	over the recent years and both the novice and the expert can be confused
+	about their benefits and limitations. In order to overcome this problem,
+	this paper provides a review of the main methods and an original
+	categorisation based on speed, memory requirements and accuracy.
+	Such a review can effectively guide the designer to select the most
+	suitable method for a given application in a principled way. Methods
+	reviewed include parametric and non-parametric background density
+	estimates and spatial correlation approaches.}},
+  citeulike-article-id = {4848803},
+  citeulike-linkout-0 = {http://dx.doi.org/10.1109/icsmc.2004.1400815},
+  citeulike-linkout-1 = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=1400815},
+  day = {13},
+  doi = {10.1109/icsmc.2004.1400815},
+  institution = {Comput. Vision Group, Univ. of Technol., Sydney, NSW, Australia},
+  isbn = {0-7803-8566-7},
+  issn = {1062-922X},
+  journal = {IEEE International Conference on Systems, Man and Cybernetics},
+  keywords = {background\_subtraction},
+  location = {The Hague, Netherlands},
+  posted-at = {2009-10-29 13:12:02},
+  url = {http://dx.doi.org/10.1109/icsmc.2004.1400815}
+}
+
+@BOOK{Pretzsch2009,
+  title = {{F}orest {D}ynamics, {G}rowth and {Y}ield: {F}rom {M}easurement to
+	{M}odel},
+  publisher = {Springer},
+  year = {2009},
+  author = {Hans Pretzsch},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.05}
+}
+
+@ARTICLE{Romero-Corral2008,
+  author = {A. Romero-Corral and V. K. Somers and J. Sierra-Johnson and R. J.
+	Thomas and M. L. Collazo-Clavell and J. Korinek and T. G. Allison
+	and J. A. Batsis and F. H. Sert-Kuniyoshi and F. Lopez-Jimenez},
+  title = {{A}ccuracy of body mass index in diagnosing obesity in the adult
+	general population},
+  journal = {International Journal of Obesity},
+  year = {2008},
+  volume = {32},
+  pages = {949-956},
+  owner = {Bernard},
+  timestamp = {2013.02.17}
+}
+
+@ARTICLE{Rosen1990,
+  author = {Glenn D. Rosen and Jason D. Harry},
+  title = {{B}rain volume estimation from serial section measurements: a comparison
+	of methodologies},
+  journal = {Journal of Neuroscience Methods},
+  year = {1990},
+  volume = {35},
+  pages = {115–124},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.12}
+}
+
+@ARTICLE{Rypens2001,
+  author = {Françoise Rypens and Thierry Metens and Nathalie Rocourt and Pascale
+	Sonigo and Francis Brunelle and Marie Pierre Quere and Laurent Guibaud
+	and Brigitte Maugey-Laulom and Chantal Durand and Fred E. Avni and
+	Danièle Eurin},
+  title = {{F}etal {L}ung {V}olume: {E}stimation at {MR} {I}maging: {I}nitial
+	{R}esults},
+  journal = {Radiology},
+  year = {2001},
+  volume = {219},
+  pages = {236-241},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.12}
+}
+
+@BOOK{Sedgewick2012,
+  title = {{A}lgorithms},
+  year = {2012},
+  author = {Robert Sedgewick and Kevin Wayne},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.12}
+}
+
+@INPROCEEDINGS{Seki2003,
+  author = {Makito Seki and Toshikazu Wada and Hideto Fujiwara and Kazuhiko Sumi},
+  title = {{B}ackground {S}ubtraction based on {C}ooccurrence of {I}mage {V}ariations},
+  booktitle = {CVPR (2)},
+  year = {2003},
+  pages = {65-72},
+  ee = {http://doi.ieeecomputersociety.org/10.1109/CVPR.2003.1211453}
+}
+
+@ELECTRONIC{Solid2013,
+  author = {Terra Solid},
+  year = {2013},
+  title = {{S}oftware for {A}irborne and {M}obile {L}i{DAR} and {I}mage {P}rocessing},
+  organization = {Terra Solid},
+  address = {http://www.terrasolid.fi/},
+  owner = {Greg Corbett},
+  timestamp = {2013.03.11}
+}
+
+@INPROCEEDINGS{Stauffer1999,
+  author = {Stauffer, C. and Grimson, W. E. L.},
+  title = {{Adaptive background mixture models for real-time tracking}},
+  booktitle = {Computer Vision and Pattern Recognition, 1999. IEEE Computer Society
+	Conference on.},
+  year = {1999},
+  volume = {2},
+  pages = {246--252 Vol. 2},
+  address = {Los Alamitos, CA, USA},
+  month = aug,
+  publisher = {IEEE},
+  abstract = {{A common method for real-time segmentation of moving regions in image
+	sequences involves ” background subtraction ” , or thresholding the
+	error between an estimate of the image without moving objects and
+	the current image. The numerous approaches to this problem differ
+	in the type of background model used and the procedure used to update
+	the model. This paper discusses modeling each pixel as a mixture
+	of Gaussians and using an on-line approximation to update the model.
+	The Gaussian, distributions of the adaptive mixture model are then
+	evaluated to determine which are most likely to result from a background
+	process. Each pixel is classified based on whether the Gaussian distribution
+	which represents it most effectively is considered part of the background
+	model. This results in a stable, real-time outdoor tracker which
+	reliably deals with lighting changes, repetitive motions from clutter,
+	and long-term scene changes. This system has been run almost continuously
+	for 16 months, 24 hours a day, through rain and snow}},
+  citeulike-article-id = {797287},
+  citeulike-linkout-0 = {http://doi.ieeecomputersociety.org/10.1109/CVPR.1999.784637},
+  citeulike-linkout-1 = {http://dx.doi.org/10.1109/cvpr.1999.784637},
+  citeulike-linkout-2 = {http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=784637},
+  day = {06},
+  doi = {10.1109/cvpr.1999.784637},
+  institution = {Artificial Intelligence Lab., MIT, Cambridge, MA},
+  isbn = {0-7695-0149-4},
+  issn = {1063-6919},
+  journal = {Computer Vision and Pattern Recognition, IEEE Computer Society Conference
+	on},
+  keywords = {1999, backgroundsubtraction, video, vision},
+  location = {Fort Collins, CO, USA},
+  posted-at = {2006-08-11 17:17:29},
+  priority = {5},
+  url = {http://dx.doi.org/10.1109/cvpr.1999.784637}
+}
+
+@MISC{UnitedKingdomofGreatBritain2011,
+  author = {Her Britannic Majesty's Government of the United Kingdom of Great
+	Britain and Northern Ireland},
+  title = {{C}ensus},
+  year = {2011},
+  owner = {Greg Corbett},
+  timestamp = {2013.02.06}
+}
+
+@BOOK{Various2000,
+  title = {{M}edical {I}mage {P}rocessing - 1984-1999},
+  publisher = {SPIE Conferences},
+  year = {2000},
+  editor = {Kenneth M. Hanson},
+  author = {Various},
+  owner = {Bernard},
+  timestamp = {2013.02.16}
+}
+
+@MASTERSTHESIS{Weyers2000,
+  author = {Weyers, Anna},
+  title = {{C}omparison of body composition using the {B}od {P}od and dual-energy
+	x-ray absorptiometry before and after weight loss},
+  school = {Ball State University},
+  year = {2000},
+  owner = {Bernard},
+  timestamp = {2013.02.16}
+}
+
+@ARTICLE{Wren1997,
+  author = {Christopher Wren and Ali Azarbayejani and Trevor Darrell and Alex
+	Pentland},
+  title = {{P}finder: {R}eal-{T}ime {T}racking of the {H}uman {B}ody},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {1997},
+  volume = {19},
+  pages = {780--785}
+}
+
+@ARTICLE{YujiMatsuzawa1994,
+  author = {Yuji Matsuzawa, Iichiro Shimomura, Tadashi Nakamura, Yoshiaki Keno,
+	Katsuto Tokunaga},
+  title = {{P}athophysiology and pathogenesis of visceral fat obesity},
+  journal = {Diabetes Research and Clinical Practice},
+  year = {1994},
+  volume = {24},
+  pages = {111-116},
+  owner = {Bernard},
+  timestamp = {2013.02.19}
+}
+
