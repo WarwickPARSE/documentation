@@ -1,0 +1,27 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 8 Women with a BMI of 30 but with different weight distribution}}{vi}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Minimum bounding box definition}}{xi}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Calculating the volume of the minimum bounding box}}{xii}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minimum Bounding Box Definition \cite {Barequet2001}}}{xv}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Calculating the Volume of the Minimum Bounding Box}}{xvi}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The Shoelace Formula \cite {Pretzsch2009}}}{xvi}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The group from left to right: Bernard, Greg, Nathan, Robin and Paps.}}{xix}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces We're meeting now?}}{xxi}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Good guy / Scum bag Robin}}{xxi}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Sexy Sexton}}{xxii}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Colour Based Isolation.}}{xxiv}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces A Poorly Isolated Person.}}{xxv}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Depth Based Cut Off, before (left) and after (right).}}{xxvi}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Depth and Hand Based Cut Off.}}{xxvi}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Transform between PCS and RWS}}{xxvii}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Calculating the Transform Constant}}{xxvii}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Calculating the Transform Constant using height}}{xxviii}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Table of Data Used to Calculate the Transform Constant}}{xxviii}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces The Wilkinson data set, visualised with an early stitching algorithm.}}{xxviii}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces The middle plane of the Wilkinson data set, visualized in Excel.}}{xxviii}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces The middle plane of the Wilkinson data set, visualized in the PARSE toolkit.}}{xxix}
+\addvspace {10\p@ }

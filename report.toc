@@ -1,0 +1,59 @@
+\contentsline {chapter}{\numberline {1}Specification}{i}
+\contentsline {section}{\numberline {1.1}Problem Statement}{i}
+\contentsline {section}{\numberline {1.2}Motivation}{ii}
+\contentsline {section}{\numberline {1.3}Requirements}{ii}
+\contentsline {subsection}{\numberline {1.3.1}Functional}{ii}
+\contentsline {subsection}{\numberline {1.3.2}Non Functional}{iii}
+\contentsline {chapter}{\numberline {2}Research}{iv}
+\contentsline {section}{\numberline {2.1}Introduction}{iv}
+\contentsline {section}{\numberline {2.2}Body Composition}{v}
+\contentsline {section}{\numberline {2.3}Background Subtraction and Person Isolation}{vi}
+\contentsline {subsection}{\numberline {2.3.1}General Approaches, Properties and Steps}{vii}
+\contentsline {subsection}{\numberline {2.3.2}Specific Algorithms}{viii}
+\contentsline {subsubsection}{Mixture of Gaussian}{viii}
+\contentsline {subsubsection}{Running Gaussian Average}{viii}
+\contentsline {subsubsection}{Temporal Median Filtering}{viii}
+\contentsline {subsubsection}{Kernel Density Estimation}{ix}
+\contentsline {subsubsection}{Sequential Kernel Density approximation}{ix}
+\contentsline {subsubsection}{Cooccurence of image variations}{ix}
+\contentsline {subsubsection}{Eigenbackgrounds}{ix}
+\contentsline {subsubsection}{Frame Differencing}{ix}
+\contentsline {subsubsection}{Approximate Median Filtering}{x}
+\contentsline {subsubsection}{Kalman Filtering}{x}
+\contentsline {subsubsection}{Median Filtering}{x}
+\contentsline {subsection}{\numberline {2.3.3}Which method is best?}{x}
+\contentsline {section}{\numberline {2.4}Volume Estimation}{x}
+\contentsline {subsection}{\numberline {2.4.1}Estimating the Height of Trees}{xi}
+\contentsline {subsection}{\numberline {2.4.2}Determination of prostate volume by transrectal ultrasound}{xii}
+\contentsline {subsubsection}{Step-Section Planimetry}{xii}
+\contentsline {subsubsection}{Elliptical volume}{xiii}
+\contentsline {chapter}{\numberline {3}Design}{xiv}
+\contentsline {section}{\numberline {3.1}Person Isolation}{xiv}
+\contentsline {subsection}{\numberline {3.1.1}Colour Based Isolation}{xiv}
+\contentsline {subsection}{\numberline {3.1.2}Depth Based Isolation}{xiv}
+\contentsline {section}{\numberline {3.2}Volume Estimation}{xv}
+\contentsline {subsection}{\numberline {3.2.1}An Initial Upper Bound Approximation}{xv}
+\contentsline {subsubsection}{Algorithm Running Time}{xvi}
+\contentsline {subsection}{\numberline {3.2.2}A Refined Approach}{xvi}
+\contentsline {subsubsection}{Algorithm Running Time}{xvii}
+\contentsline {section}{\numberline {3.3}Point Cloud Stitching}{xviii}
+\contentsline {subsection}{\numberline {3.3.1}Surface Normal Calculation}{xviii}
+\contentsline {chapter}{\numberline {4}Project Management}{xix}
+\contentsline {section}{\numberline {4.1}The Group}{xix}
+\contentsline {section}{\numberline {4.2}Group Behaviour}{xx}
+\contentsline {subsection}{\numberline {4.2.1}Weekly Meetings}{xx}
+\contentsline {subsection}{\numberline {4.2.2}Group Coding Sessions}{xx}
+\contentsline {subsection}{\numberline {4.2.3}Peer Review Process}{xx}
+\contentsline {subsection}{\numberline {4.2.4}Centralised Code Repository}{xx}
+\contentsline {subsection}{\numberline {4.2.5}Self organising Sub Committees}{xx}
+\contentsline {subsection}{\numberline {4.2.6}Clear Task Responsibility}{xxi}
+\contentsline {subsection}{\numberline {4.2.7}Morale}{xxi}
+\contentsline {chapter}{\numberline {5}Testing and Results}{xxiii}
+\contentsline {section}{\numberline {5.1}Person Isolation}{xxiii}
+\contentsline {subsection}{\numberline {5.1.1}Colour Based Isolation}{xxiii}
+\contentsline {subsection}{\numberline {5.1.2}Depth Based Isolation}{xxiii}
+\contentsline {section}{\numberline {5.2}Volume Estimation}{xxiv}
+\contentsline {subsection}{\numberline {5.2.1}Minimum Bounding Box}{xxiv}
+\contentsline {subsection}{\numberline {5.2.2}Determining the Transform Constant}{xxv}
+\contentsline {subsection}{\numberline {5.2.3}Volume Rendering}{xxvii}
+\contentsline {chapter}{\numberline {6}User Manual}{xxx}
