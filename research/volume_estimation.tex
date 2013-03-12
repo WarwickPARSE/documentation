@@ -45,9 +45,16 @@ SSP is often assumed to be the most accurate means of volume measurement and in 
 Such a correlation coefficient indicates the method is highly accurate.
 As the method only needs to traverse the perimeter once it will have a low running time which is essential as it will be called on many planes. As the method is traversing up the point cloud representation of an object, the method will run in $O(n)$, where n is the number of points in the point cloud. Also, whilst the area/volume is being calculated other useful metrics could be determined, such as perimeter of a step \footnote{or a plane}.\\
 
-Similar method to SSP have been used in other areas of medicine, such as mesauring brain volumes \todo{carry on} http://www.sciencedirect.com/science/article/pii/016502709090101K
-http://radiology.rsna.org/content/219/1/236.short
-http://circ.ahajournals.org/content/43/6/895.full.pdf
+Similar method to SSP have been used in other areas of medicine, such as measuring brain volumes \cite{Rosen1990}
 
 \subsubsection{Elliptical volume}
-Much like a bounding box, an ellipsoid can be formed around a person using their height, depth and breadth and the volume of this ellipsoid is then calculated. For prostates, the elliptical volume method, demonstrated a correlation coefficient of 0.90 \cite{K1991}. Again, this suggests a high accuracy. However, this high performance may be due to the roughly walnut shaped nature of a prostate \todo{cite}. On a less spherical object, such as a person, the elliptical method may output a higher volume than the true value, as with the bounding box. If the min and max values of a object were stored in it's point cloud, the ellipsoid could be computed in $O(1)$, similar to the bounding box. If the min and max values need to be computed on the fly, this would bring the complexity up to $O(n)$, where n is the number of points in the point cloud, putting its running time in the same order as the step-section method. As elliptical volume is less accurate, takes the same time and cannot give other information, such as perimeter, step-section will be the bases of volume calculation in the tookit.
+Much like a bounding box, an ellipsoid can be formed around a person using their height, depth and breadth and the volume of this ellipsoid is then calculated.
+For prostates, the elliptical volume method, demonstrated a correlation coefficient of 0.90 \cite{K1991}. Again, this suggests a high accuracy.
+However, this high performance may be due to the roughly walnut shaped nature of a prostate \cire{D2003}. 
+On a less spherical object, such as a person, the elliptical method may output a higher volume than the true value, as with the bounding box.\\
+
+If the min and max values of a object were stored in it's point cloud, the ellipsoid could be computed in $O(1)$, similar to the bounding box. 
+If the min and max values need to be computed on the fly, this would bring the complexity up to $O(n)$, where n is the number of points in the point cloud, putting its running time in the same order as the step-section method.
+As elliptical volume is less accurate, takes the same time and cannot give other information, such as perimeter, step-section will be the bases of volume calculation in the tookit.
+
+\subsubsection{Convex Hulls}
