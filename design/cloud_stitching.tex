@@ -1,5 +1,18 @@
 \section{Point Cloud Stitching}
-As only one scanner is to be used it is necessary to produce multiple scans so that the patient's whole body is scanned. Each of these scans must then be stitched together to form one big model which can then be manipulated as necessary. 
+The specification states that only a single scanner is to be used. 
+This necessitates the utilisation of multiple scans and the stitching thereof into one unified data structure. 
+This data structure can then be manipulated to produce volume estimation, as described in section \todo{cross reference these sections}.
+
+\subsubsection{Initial Experimentation}
+Initially the point clouds were stitched by rotating successive scans 90\deg , increasing by a further 90\deg for each previous scan that has been taken, in an anticlockwise direction. 
+The scan was then translated by a constant vector to produce a reasonable point cloud. 
+This was able to produce reasonable results in individual cases but people come in a variety of "depths" and such an algorithm would only be useful in a world where everyone had constant "depths". 
+
+\subsubsection{Development of a more sophisticated approach: Bounding Boxes} 
+While the Kinect is designed to produce depth information, it is only capable of scanning the visible surfaces of objects in front of the point in the 3D world in which it is situated. 
+This has led to the coining of the term \emph{2.5D} to explain the limited information that the Kinect, and all single depth sensors, are able to gain about the world around them \cite{lu2006}. 
+In theory this very limitation can be exploited to produce a reasonable, but by no means perfect, point cloud registration most cases \todo{cross reference with testing and theory}. 
+Within the context of this project this has come to be known as the "Bounding Box" method of point cloud registration. 
 
 \subsection{Surface Normal Calculation}
 The majority of the algorithms pertaining to point cloud stitching require the surface normal field to be calculated. This would present a challenge if we were to estimate the normal to each point in each scan as it would simply require too many calculations to be made. As a result it was decided that some sampling method should be used. In this case a voxel grid filter was implemented to create a sparse representation of the object that had just been scanned.  
